@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog — ComparaAcum.ro</title>
+<link rel="stylesheet" href="css/main.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RN97LTXFW4');
+</script>
+</head>
+<body>
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
+  <div class="navbar-links">
+    <div class="nav-dropdown">
+      <a href="rezultate.html">Asigurări</a>
+      <div class="dropdown-menu">
+        <a href="rezultate.html">🚗 RCA Auto</a>
+        <a href="rezultate-casa.html">🏠 Asigurare Casă</a>
+        <a href="rezultate-sanatate.html">❤️ Asigurare Sănătate</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="rezultate-energie.html">Energie</a>
+      <div class="dropdown-menu">
+        <a href="rezultate-energie.html">⚡ Energie Electrică</a>
+        <a href="rezultate-gaze.html">🔥 Gaze Naturale</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="rezultate-internet.html">Internet &amp; TV</a>
+      <div class="dropdown-menu">
+        <a href="rezultate-internet.html">📡 Internet Fibră</a>
+        <a href="rezultate-tv.html">📺 Televiziune</a>
+        <a href="rezultate-internet.html">📦 Pachete Internet + TV</a>
+      </div>
+    </div>
+    <a href="blog.html" style="color:var(--accent)">Blog</a>
+    <a href="despre.html">Despre noi</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html" class="navbar-cta">Compară gratuit</a>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="section-label">📚 Blog & Ghiduri</div>
+  <h1>Ghiduri utile pentru consumatori</h1>
+  <p>Articole despre asigurări, energie și internet — scrise simplu, fără jargon</p>
+</div>
+<section>
+  <div class="section-inner">
+    <div class="blog-grid">
+      <a href="blog/rca-2026.html" class="blog-card">
+        <div class="blog-card-img">🚗</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">RCA Auto</div>
+          <div class="blog-card-title">Cum alegi cea mai ieftină asigurare RCA în 2026 fără să sacrifici calitatea</div>
+          <div class="blog-card-excerpt">Ghid complet: ce verifici înainte să cumperi, cum compari ofertele corect și capcanele pe care le eviți.</div>
+          <div class="blog-card-meta"><span>12 mai 2026</span><span>8 min lectură</span></div>
+        </div>
+      </a>
+      <a href="blog/energie-2026.html" class="blog-card">
+        <div class="blog-card-img">⚡</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Energie</div>
+          <div class="blog-card-title">Cum schimbi furnizorul de energie electrică în 2026 — ghid pas cu pas</div>
+          <div class="blog-card-excerpt">Tot ce trebuie să știi despre schimbarea furnizorului, termene și economii reale.</div>
+          <div class="blog-card-meta"><span>18 mai 2026</span><span>6 min lectură</span></div>
+        </div>
+      </a>
+      <a href="blog/internet-2026.html" class="blog-card">
+        <div class="blog-card-img">📡</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Internet</div>
+          <div class="blog-card-title">Cele mai bune oferte internet fibră optică în România 2026</div>
+          <div class="blog-card-excerpt">Comparație completă între Digi, Orange, Telekom și Vodafone — prețuri, viteze și calitate.</div>
+          <div class="blog-card-meta"><span>22 mai 2026</span><span>5 min lectură</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<footer><div class="footer-inner"><div class="footer-bottom"><p>© 2026 ComparaAcum.ro — Toate drepturile rezervate</p></div></div></footer>
+<script>
+const dot=document.getElementById('cursor-dot');
+const ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=-200,ry=-200,started=false;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  dot.style.left=mx+'px';dot.style.top=my+'px';
+  if(!started){rx=mx;ry=my;started=true;}
+});
+function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}
+animRing();
+document.addEventListener('mouseover',e=>{
+  const el=e.target.closest('a,button,[role="button"],.category-card,.widget-tab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit');
+  document.body.classList.toggle('hovering',!!el);
+});
+document.addEventListener('mouseout',e=>{
+  if(!e.relatedTarget||!e.relatedTarget.closest('a,button,[role="button"],.category-card,.widget-tab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit')){
+    document.body.classList.remove('hovering');
+  }
+});
+</script>
+</body>
+</html>
