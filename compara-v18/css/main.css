@@ -1,6 +1,6 @@
 :root{--bg-primary:#0a0a0f;--bg-secondary:#12121a;--bg-card:#1a1a2e;--bg-card-hover:#1e1e35;--accent:#00d4ff;--accent-glow:rgba(0,212,255,.15);--text-primary:#fff;--text-secondary:#a0a0b8;--text-muted:#606080;--border:rgba(255,255,255,.07);--border-accent:rgba(0,212,255,.3);--success:#00e676;--warning:#ffd740;--font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--radius:12px;--radius-lg:20px;--shadow:0 8px 32px rgba(0,0,0,.4);--shadow-accent:0 0 30px rgba(0,212,255,.15);--transition:all .25s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+
 body{font-family:var(--font);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;min-height:100vh;overflow-x:hidden}
 select, input, textarea, option {
   cursor: none !important;
@@ -22,11 +22,11 @@ nav a, nav button, .nav-links a, .nav-cta, .logo{cursor:none}
 .lang-switch{display:flex;gap:4px;background:var(--bg-card);border-radius:8px;padding:4px}
 .lang-btn{padding:4px 10px;border-radius:6px;font-size:.8rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--text-secondary);transition:var(--transition)}
 .lang-btn.active{background:var(--accent);color:#000}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden;text-align:center}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 1.2rem 4rem;position:relative;overflow:hidden;text-align:center}
 .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,212,255,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(120,40,255,.08) 0%,transparent 70%)}
-.hero-content{position:relative;z-index:1;max-width:800px}
+.hero-content{position:relative;z-index:1;max-width:800px;width:100%}
 .hero-badge{display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);padding:.35rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem}
-.hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(1.8rem,6vw,4rem);font-weight:900;line-height:1.15;letter-spacing:-.5px;margin-bottom:1.5rem;word-break:break-word}
 .hero h1 .accent{color:var(--accent)}
 .hero p{font-size:1.15rem;color:var(--text-secondary);max-width:580px;margin:0 auto 2.5rem}
 .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -105,7 +105,9 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
 .btn-select:hover{background:#fff}
 .saving-badge{background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);color:var(--success);font-size:.8rem;font-weight:700;padding:.25rem .7rem;border-radius:6px}
 @media(max-width:768px){.navbar-links{display:none}.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.footer-top{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:center}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:center}.hero h1{font-size:1.75rem;letter-spacing:-.3px}}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+.widget-section{scroll-margin-top:70px}
 .nav-dropdown{position:relative}
 .nav-dropdown>a{display:flex;align-items:center;gap:4px}
 .nav-dropdown>a::after{content:'▾';font-size:.7rem;opacity:.6}
