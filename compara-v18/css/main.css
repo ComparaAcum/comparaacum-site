@@ -113,13 +113,15 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
 .dropdown-menu a{display:block;padding:.6rem 1.1rem;font-size:.88rem;color:var(--text-secondary)!important;font-weight:500;transition:var(--transition);white-space:nowrap}
 .dropdown-menu a:hover{color:var(--accent)!important;background:var(--accent-glow)}
 .nav-dropdown:hover .dropdown-menu{display:block}
-/* Custom cursor */
-*,*::before,*::after{cursor:none!important}
+/* Custom cursor — desktop only */
+@media (hover: hover) and (pointer: fine) {
+  *,*::before,*::after{cursor:none!important}
+  select,input,textarea,option{cursor:none!important}
+}
 #cursor-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s ease,background .2s ease;top:0;left:0}
 #cursor-ring{width:36px;height:36px;border:2px solid rgba(0,212,255,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s ease,width .2s ease,height .2s ease,border-color .2s ease,background .2s ease;top:0;left:0}
 body.hovering #cursor-dot{transform:translate(-50%,-50%) scale(1.5)}
-body.hovering #cursor-ring{width:52px@media (hover: none) and (pointer: coarse) {
-  #cursor-dot, #cursor-ring {
-    display: none !important;
-  }
+body.hovering #cursor-ring{width:52px;height:52px;border-color:rgba(0,212,255,.8)}
+@media (hover: none),(pointer: coarse){
+  #cursor-dot,#cursor-ring{display:none!important}
 }
