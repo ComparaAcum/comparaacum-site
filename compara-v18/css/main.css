@@ -139,6 +139,7 @@ html{scroll-behavior:smooth;scroll-padding-top:70px}
 .dropdown-menu a{display:block;padding:.6rem 1.1rem;font-size:.88rem;color:var(--text-secondary)!important;font-weight:500;transition:var(--transition);white-space:nowrap}
 .dropdown-menu a:hover{color:var(--accent)!important;background:var(--accent-glow)}
 .nav-dropdown:hover .dropdown-menu{display:block}
+.nav-dropdown.open .dropdown-menu{display:block}
 /* Custom cursor — desktop only */
 @media (hover: hover) and (pointer: fine) {
   *,*::before,*::after{cursor:none!important}
