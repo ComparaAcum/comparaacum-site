@@ -20,13 +20,15 @@ nav a, nav button, .nav-links a, .nav-cta, .logo{cursor:none}
 .navbar-cta{background:var(--accent)!important;color:#000!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700}
 .navbar-cta:hover{background:#fff!important;color:#000!important}
 .lang-switch{display:flex;gap:4px;background:var(--bg-card);border-radius:8px;padding:4px}
+.lang-switcher{display:flex;gap:4px;align-items:center;flex-shrink:0}
 .lang-btn{padding:4px 10px;border-radius:6px;font-size:.8rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--text-secondary);transition:var(--transition)}
+.lang-btn.active{background:var(--accent-glow);color:var(--accent);border:1px solid var(--border-accent)}
 .lang-btn.active{background:var(--accent);color:#000}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 1.2rem 4rem;position:relative;overflow:hidden;text-align:center}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 1.2rem 4rem;position:relative;overflow:hidden;text-align:center;box-sizing:border-box}
 .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,212,255,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(120,40,255,.08) 0%,transparent 70%)}
-.hero-content{position:relative;z-index:1;max-width:800px;width:100%}
-.hero-badge{display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);padding:.35rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem}
-.hero h1{font-size:clamp(1.8rem,6vw,4rem);font-weight:900;line-height:1.15;letter-spacing:-.5px;margin-bottom:1.5rem;word-break:break-word}
+.hero-content{position:relative;z-index:1;max-width:800px;width:100%;box-sizing:border-box}
+.hero-badge{display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);padding:.35rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem;max-width:100%}
+.hero h1{font-size:clamp(1.5rem,5vw,4rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin-bottom:1.5rem;word-break:break-word;overflow-wrap:break-word;max-width:100%}
 .hero h1 .accent{color:var(--accent)}
 .hero p{font-size:1.15rem;color:var(--text-secondary);max-width:580px;margin:0 auto 2.5rem}
 .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -39,7 +41,7 @@ nav a, nav button, .nav-links a, .nav-cta, .logo{cursor:none}
 .stat-item{text-align:center}
 .stat-value{font-size:1.8rem;font-weight:800;color:var(--accent)}
 .stat-label{font-size:.8rem;color:var(--text-secondary);margin-top:2px}
-.compare-widget{max-width:960px;margin:0 auto;padding:2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.compare-widget{max-width:960px;margin:0 auto;padding:2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);width:100%;box-sizing:border-box}
 .widget-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;justify-content:flex-start}
 .widget-section{width:100%;text-align:left}
 .widget-tab{padding:.7rem 1.4rem;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;font-size:.95rem;font-weight:600;transition:var(--transition);display:flex;align-items:center;gap:.4rem}
@@ -108,23 +110,25 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
 @media(max-width:480px){
   .footer-top{grid-template-columns:1fr}
   .hero-actions{flex-direction:column;align-items:center}
-  .hero h1{font-size:1.5rem;letter-spacing:-.2px;line-height:1.2}
-  .hero p{font-size:.95rem}
-  .hero{padding-left:1rem;padding-right:1rem;overflow-x:hidden}
-  .hero-content{width:100%;box-sizing:border-box;padding:0 .5rem}
+  .hero h1{font-size:1.45rem;letter-spacing:-.1px;line-height:1.2}
+  .hero p{font-size:.9rem}
+  .hero{padding-left:.75rem;padding-right:.75rem}
+  .compare-widget{padding:1.2rem .75rem}
+  .hero-badge{font-size:.7rem;padding:.3rem .75rem}
 }
 /* Landscape mobile fix */
 @media(max-height:500px) and (orientation:landscape){
   .navbar{padding:.5rem 1rem}
   .navbar-logo{font-size:1.1rem}
-  .navbar-cta{padding:.3rem .8rem;font-size:.8rem}
+  .navbar-cta{padding:.3rem .8rem;font-size:.8rem;white-space:nowrap}
+  .navbar-links{gap:.75rem}
   .hero{padding-top:5rem;min-height:auto;padding-bottom:2rem}
   .page-hero{padding-top:4.5rem}
 }
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 .widget-section{scroll-margin-top:70px}
-.page-hero{padding-top:6rem;padding-bottom:2.5rem;padding-left:2rem;padding-right:2rem;text-align:center}
-@media(max-width:480px){.page-hero{padding-top:6rem;padding-left:1.2rem;padding-right:1.2rem}}
+.page-hero{padding-top:6rem;padding-bottom:2.5rem;padding-left:2rem;padding-right:2rem;text-align:center;box-sizing:border-box}
+@media(max-width:480px){.page-hero{padding-top:6rem;padding-left:1rem;padding-right:1rem}}
 @media(max-width:390px){.page-hero{padding-top:5.5rem}}
 .nav-dropdown{position:relative}
 .nav-dropdown>a{display:flex;align-items:center;gap:4px}
