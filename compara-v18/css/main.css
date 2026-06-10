@@ -88,7 +88,7 @@ section{padding:5rem 2rem;position:relative;z-index:1}
 .cta-banner{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(120,40,255,.1));border:1px solid var(--border-accent);border-radius:var(--radius-lg);padding:3rem;text-align:center}
 .cta-banner h2{font-size:2rem;font-weight:800;margin-bottom:1rem}
 .cta-banner p{color:var(--text-secondary);margin-bottom:2rem}
-footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:3rem 2rem 1.5rem;margin-top:4rem}
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:3rem 2rem 1.5rem;margin-top:4rem;position:relative;z-index:2}
 .footer-inner{max-width:1100px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
 .footer-brand p{font-size:.85rem;color:var(--text-secondary);margin-top:.75rem;max-width:280px}

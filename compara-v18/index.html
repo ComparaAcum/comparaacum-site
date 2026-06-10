@@ -6,7 +6,7 @@
 <title>ComparaAcum.ro — Compară asigurări, energie și internet în România</title>
 <meta name="description" content="Compară gratuit asigurări RCA, asigurări casă, furnizori energie electrică, gaze și internet. Găsește cea mai bună ofertă în 2 minute și economisești până la 1.200 RON pe an."/>
 <link rel="canonical" href="https://comparaacum.ro/"/>
-<link rel="stylesheet" href="css/main.css?v=19"/>
+<link rel="stylesheet" href="css/main.css?v=20"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 /* Widget sub-tabs */
@@ -90,7 +90,7 @@
 
 <!-- MASCOTA FIXA PE FUNDAL -->
 <div class="mascot-fixed">
-  <img src="images/mascota-hero.png" alt="" aria-hidden="true"/>
+  <img src="images/mascota-v2.png" alt="" aria-hidden="true"/>
 </div>
 
 <!-- HERO -->
@@ -377,27 +377,28 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
 }
 </script>
 <script>
-// Touch dropdown support
-if(window.matchMedia('(hover: none), (pointer: coarse)').matches){
+// Touch dropdown support v2 - works on any touch-capable device
+(function(){
+  var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
+  if(!isTouch) return;
   document.querySelectorAll('.nav-dropdown > a').forEach(function(link){
     link.addEventListener('click', function(e){
       var parent = this.parentElement;
       var menu = parent.querySelector('.dropdown-menu');
       if(menu && !parent.classList.contains('open')){
         e.preventDefault();
-        // Close other open dropdowns
+        e.stopPropagation();
         document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
         parent.classList.add('open');
       }
     });
   });
-  // Close dropdown when tapping outside
   document.addEventListener('click', function(e){
     if(!e.target.closest('.nav-dropdown')){
       document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
     }
   });
-}
+})();
 </script>
 </body>
 </html>

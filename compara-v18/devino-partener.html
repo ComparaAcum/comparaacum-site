@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Devino Partener — ComparaAcum.ro</title>
 <meta name="description" content="Devino furnizor partener pe ComparaAcum.ro și ajunge la mii de clienți care compară asigurări, energie și internet în România."/>
-<link rel="stylesheet" href="css/main.css?v=19"/>
+<link rel="stylesheet" href="css/main.css?v=20"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 .partner-benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:2rem 0}
@@ -208,27 +208,28 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
 }
 </script>
 <script>
-// Touch dropdown support
-if(window.matchMedia('(hover: none), (pointer: coarse)').matches){
+// Touch dropdown support v2 - works on any touch-capable device
+(function(){
+  var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
+  if(!isTouch) return;
   document.querySelectorAll('.nav-dropdown > a').forEach(function(link){
     link.addEventListener('click', function(e){
       var parent = this.parentElement;
       var menu = parent.querySelector('.dropdown-menu');
       if(menu && !parent.classList.contains('open')){
         e.preventDefault();
-        // Close other open dropdowns
+        e.stopPropagation();
         document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
         parent.classList.add('open');
       }
     });
   });
-  // Close dropdown when tapping outside
   document.addEventListener('click', function(e){
     if(!e.target.closest('.nav-dropdown')){
       document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
     }
   });
-}
+})();
 </script>
 </body>
 </html>
