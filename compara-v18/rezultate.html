@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Compară asigurări RCA 2026 — ComparaAcum.ro</title>
-<link rel="stylesheet" href="css/main.css?v=21"/>
+<link rel="stylesheet" href="css/main.css?v=23"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
@@ -13,6 +13,24 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-RN97LTXFW4');
+</script>
+<script>
+function navDrop(el){
+  var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
+  if(!isTouch)return true;
+  var p=el.parentElement;
+  if(p.classList.contains('open'))return true;
+  var all=document.querySelectorAll('.nav-dropdown.open');
+  for(var i=0;i<all.length;i++){all[i].classList.remove('open');}
+  p.classList.add('open');
+  return false;
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.nav-dropdown')){
+    var all=document.querySelectorAll('.nav-dropdown.open');
+    for(var i=0;i<all.length;i++){all[i].classList.remove('open');}
+  }
+});
 </script>
 </head>
 <body>
@@ -32,14 +50,14 @@
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-energie.html">Energie</a>
+      <a href="rezultate-energie.html" onclick="return navDrop(this)">Energie</a>
       <div class="dropdown-menu">
         <a href="rezultate-energie.html">⚡ Energie Electrică</a>
         <a href="rezultate-gaze.html">🔥 Gaze Naturale</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-internet.html">Internet &amp; TV</a>
+      <a href="rezultate-internet.html" onclick="return navDrop(this)">Internet &amp; TV</a>
       <div class="dropdown-menu">
         <a href="rezultate-internet.html">📡 Internet Fibră</a>
         <a href="rezultate-tv.html">📺 Televiziune</a>

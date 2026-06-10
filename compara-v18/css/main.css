@@ -29,10 +29,10 @@ nav a, nav button, .nav-links a, .nav-cta, .logo{cursor:none}
 .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,212,255,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(120,40,255,.08) 0%,transparent 70%)}
 .hero-content{position:relative;z-index:1;max-width:800px;width:100%;box-sizing:border-box}
 /* Mascota fixa pe fundal - ramane pe loc la scroll */
-.mascot-fixed{position:fixed;right:20px;bottom:0;z-index:0;pointer-events:none;opacity:.92}
-.mascot-fixed img{height:85vh;max-height:820px;width:auto}
-@media(max-width:1100px){.mascot-fixed{opacity:.35}}
-@media(max-width:768px){.mascot-fixed{display:none}}
+.mascot-fixed{position:fixed;left:15px;bottom:0;z-index:10;pointer-events:none;opacity:.95}
+.mascot-fixed img{height:72vh;max-height:720px;width:auto}
+@media(max-width:1500px){.mascot-fixed img{height:48vh}}
+@media(max-width:1250px){.mascot-fixed{display:none}}
 .hero-badge{display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);padding:.35rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem;max-width:100%}
 .hero h1{font-size:clamp(1.5rem,5vw,4rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin-bottom:1.5rem;word-break:break-word;overflow-wrap:break-word;max-width:100%}
 .hero h1 .accent{color:var(--accent)}
