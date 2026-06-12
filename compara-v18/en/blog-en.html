@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Blog — ComparaAcum.ro</title>
-<link rel="stylesheet" href="css/main.css?v=36"/>
+<link rel="stylesheet" href="../css/main.css?v=36"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
@@ -45,39 +45,39 @@ document.addEventListener('click',function(e){
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 <nav class="navbar">
-  <a href="index.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
+  <a href="index-en.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
   <div class="navbar-links">
     <div class="nav-dropdown">
-      <a href="rezultate.html" onclick="return navDrop(this)">Asigurări</a>
+      <a href="results-rca-en.html" onclick="return navDrop(this)">Insurance</a>
       <div class="dropdown-menu">
-        <a href="rezultate.html">🚗 RCA Auto</a>
-        <a href="rezultate-casa.html">🏠 Asigurare Casă</a>
-        <a href="rezultate-sanatate.html">❤️ Asigurare Sănătate</a>
+        <a href="results-rca-en.html">🚗 Car Insurance</a>
+        <a href="results-home-en.html">🏠 Home Insurance</a>
+        <a href="results-health-en.html">❤️ Health Insurance</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-energie.html" onclick="return navDrop(this)">Energie</a>
+      <a href="results-energy-en.html" onclick="return navDrop(this)">Energy</a>
       <div class="dropdown-menu">
-        <a href="rezultate-energie.html">⚡ Energie Electrică</a>
-        <a href="rezultate-gaze.html">🔥 Gaze Naturale</a>
+        <a href="results-energy-en.html">⚡ Electricity</a>
+        <a href="results-gas-en.html">🔥 Natural Gas</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-internet.html" onclick="return navDrop(this)">Internet &amp; TV</a>
+      <a href="results-internet-en.html" onclick="return navDrop(this)">Internet &amp; TV</a>
       <div class="dropdown-menu">
-        <a href="rezultate-internet.html">📡 Internet Fibră</a>
-        <a href="rezultate-tv.html">📺 Televiziune</a>
-        <a href="rezultate-internet.html">📦 Pachete Internet + TV</a>
+        <a href="results-internet-en.html">📡 Fibre Internet</a>
+        <a href="results-tv-en.html">📺 Television</a>
+        <a href="results-internet-en.html">📦 Internet + TV Bundles</a>
       </div>
     </div>
-    <a href="blog.html" style="color:var(--accent)">Blog</a>
-    <a href="despre.html">Despre noi</a>
-    <a href="contact.html">Contact</a>
-    <a href="index.html" class="navbar-cta">Compară gratuit</a>
+    <a href="blog-en.html" style="color:var(--accent)">Blog</a>
+    <a href="about-en.html">About us</a>
+    <a href="contact-en.html">Contact</a>
+    <a href="index-en.html" class="navbar-cta">Compare free</a>
   </div>
   <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('ro', this)">RO</button>
-    <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+    <button class="lang-btn" onclick="window.location.href='../blog.html'">RO</button>
+    <button class="lang-btn active">EN</button>
   </div>
 </nav>
 <div class="page-hero">
@@ -88,7 +88,7 @@ document.addEventListener('click',function(e){
 <section>
   <div class="section-inner">
     <div class="blog-grid">
-      <a href="blog/rca-2026.html" class="blog-card">
+      <a href="blog/rca-2026-en.html" class="blog-card">
         <div class="blog-card-img">🚗</div>
         <div class="blog-card-body">
           <div class="blog-cat">RCA Auto</div>
@@ -97,16 +97,16 @@ document.addEventListener('click',function(e){
           <div class="blog-card-meta"><span>12 mai 2026</span><span>8 min lectură</span></div>
         </div>
       </a>
-      <a href="blog/energie-2026.html" class="blog-card">
+      <a href="blog/energie-2026-en.html" class="blog-card">
         <div class="blog-card-img">⚡</div>
         <div class="blog-card-body">
-          <div class="blog-cat">Energie</div>
+          <div class="blog-cat">Energy</div>
           <div class="blog-card-title">Cum schimbi furnizorul de energie electrică în 2026 — ghid pas cu pas</div>
           <div class="blog-card-excerpt">Tot ce trebuie să știi despre schimbarea furnizorului, termene și economii reale.</div>
           <div class="blog-card-meta"><span>18 mai 2026</span><span>6 min lectură</span></div>
         </div>
       </a>
-      <a href="blog/internet-2026.html" class="blog-card">
+      <a href="blog/internet-2026-en.html" class="blog-card">
         <div class="blog-card-img">📡</div>
         <div class="blog-card-body">
           <div class="blog-cat">Internet</div>
@@ -118,7 +118,7 @@ document.addEventListener('click',function(e){
     </div>
   </div>
 </section>
-<footer><div class="footer-inner"><div class="footer-bottom"><p>© 2026 ComparaAcum.ro — Toate drepturile rezervate</p></div></div></footer>
+<footer><div class="footer-inner"><div class="footer-bottom"><p>© 2026 ComparaAcum.ro — All rights reserved</p></div></div></footer>
 <script>
 if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
   const dot=document.getElementById('cursor-dot');

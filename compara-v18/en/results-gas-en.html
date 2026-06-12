@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Compară asigurări sănătate 2026 — ComparaAcum.ro</title>
-<link rel="stylesheet" href="css/main.css?v=36"/>
+<title>Compară furnizori gaze naturale 2026 — ComparaAcum.ro</title>
+<link rel="stylesheet" href="../css/main.css?v=36"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
@@ -45,53 +45,53 @@ document.addEventListener('click',function(e){
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 <nav class="navbar">
-  <a href="index.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
+  <a href="index-en.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
   <div class="navbar-links">
     <div class="nav-dropdown">
-      <a href="rezultate.html" style="color:var(--accent)">Asigurări</a>
+      <a href="results-rca-en.html" onclick="return navDrop(this)">Insurance</a>
       <div class="dropdown-menu">
-        <a href="rezultate.html">🚗 RCA Auto</a>
-        <a href="rezultate-casa.html">🏠 Asigurare Casă</a>
-        <a href="rezultate-sanatate.html">❤️ Asigurare Sănătate</a>
+        <a href="results-rca-en.html">🚗 Car Insurance</a>
+        <a href="results-home-en.html">🏠 Home Insurance</a>
+        <a href="results-health-en.html">❤️ Health Insurance</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-energie.html" onclick="return navDrop(this)">Energie</a>
+      <a href="results-energy-en.html" style="color:var(--accent)">Energy</a>
       <div class="dropdown-menu">
-        <a href="rezultate-energie.html">⚡ Energie Electrică</a>
-        <a href="rezultate-gaze.html">🔥 Gaze Naturale</a>
+        <a href="results-energy-en.html">⚡ Electricity</a>
+        <a href="results-gas-en.html">🔥 Natural Gas</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-internet.html" onclick="return navDrop(this)">Internet &amp; TV</a>
+      <a href="results-internet-en.html" onclick="return navDrop(this)">Internet &amp; TV</a>
       <div class="dropdown-menu">
-        <a href="rezultate-internet.html">📡 Internet Fibră</a>
-        <a href="rezultate-tv.html">📺 Televiziune</a>
-        <a href="rezultate-internet.html">📦 Pachete Internet + TV</a>
+        <a href="results-internet-en.html">📡 Fibre Internet</a>
+        <a href="results-tv-en.html">📺 Television</a>
+        <a href="results-internet-en.html">📦 Internet + TV Bundles</a>
       </div>
     </div>
-    <a href="blog.html">Blog</a>
-    <a href="despre.html">Despre noi</a>
-    <a href="contact.html">Contact</a>
-    <a href="index.html" class="navbar-cta">Compară gratuit</a>
+    <a href="blog-en.html">Blog</a>
+    <a href="about-en.html">About us</a>
+    <a href="contact-en.html">Contact</a>
+    <a href="index-en.html" class="navbar-cta">Compare free</a>
   </div>
   <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('ro', this)">RO</button>
-    <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+    <button class="lang-btn" onclick="window.location.href='../rezultate-gaze.html'">RO</button>
+    <button class="lang-btn active">EN</button>
   </div>
 </nav>
 <div class="page-hero">
-  <div class="section-label">❤️ Asigurare Sănătate</div>
+  <div class="section-label">🔥 Natural Gas</div>
 <div style="max-width:1100px;margin:1rem auto 0;padding:0 2rem;">
   <div style="background:rgba(255,215,64,.08);border:1px solid rgba(255,215,64,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:.75rem;align-items:flex-start;">
     <span style="font-size:1.2rem;flex-shrink:0;">ℹ️</span>
     <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;">
-      <strong style="color:var(--warning);">Platformă în faza de lansare.</strong> Datele afișate mai jos sunt demonstrative. Lucrăm la integrarea ofertelor reale de la furnizori — lasă-ne emailul tău și te anunțăm când platforma e complet funcțională!
+      <strong style="color:var(--warning);">Platform in launch phase.</strong> Datele afișate mai jos sunt demonstrative. Lucrăm la integrarea ofertelor reale de la furnizori — lasă-ne emailul tău și te anunțăm când platforma e complet funcțională!
     </p>
   </div>
 </div>
-  <h1>Compară asigurări private de sănătate</h1>
-  <p>9 furnizori disponibili · Acces rapid la medici specialiști</p>
+  <h1>Compară furnizori de gaze naturale</h1>
+  <p>6 furnizori disponibili · Economisești până la 480 RON/year</p>
 </div>
 <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
   <div class="results-list">
@@ -99,76 +99,78 @@ document.addEventListener('click',function(e){
       <div class="result-card-top">
         <div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">❤️</span>
-            <div class="result-provider">Furnizor Medical A</div>
-            <span class="saving-badge">Cel mai complet</span>
+            <span style="font-size:1.5rem;">🔥</span>
+            <div class="result-provider">Furnizor Gaze A</div>
+            <span class="saving-badge">Recommended</span>
           </div>
-          <div class="result-rating">★★★★★ <span style="color:var(--text-muted)">4.9 (4.521 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Plan Esential · Individ 35 ani</div>
+          <div class="result-rating">★★★★★ <span style="color:var(--text-muted)">4.6 (2.341 recenzii)</span></div>
+          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract 12 luni · Preț fix garantat</div>
         </div>
         <div class="result-price">
-          <div class="result-price-main">89 RON</div>
-          <div class="result-price-period">/ lună</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">1.068 RON/an</div>
+          <div class="result-price-main">0.24 RON</div>
+          <div class="result-price-period">/ kWh</div>
+          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~120 RON/month</div>
+          <div class="saving-badge" style="margin-top:6px;">-20% față de medie</div>
         </div>
       </div>
       <div class="result-features">
-        <span class="feature-badge">✓ Consultații specialiști</span>
-        <span class="feature-badge">✓ Analize laborator</span>
-        <span class="feature-badge">✓ Imagistică medicală</span>
-        <span class="feature-badge">✓ Urgențe 24/7</span>
+        <span class="feature-badge">✓ Preț fix 12 luni</span>
+        <span class="feature-badge">✓ Factură online</span>
+        <span class="feature-badge">✓ Fără penalități</span>
       </div>
       <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
+        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
+        <span class="saving-badge">Economisești 480 RON/year</span>
       </div>
     </div>
     <div class="result-card">
       <div class="result-card-top">
         <div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">💙</span>
-            <div class="result-provider">Furnizor Medical B</div>
+            <span style="font-size:1.5rem;">🔥</span>
+            <div class="result-provider">Furnizor Gaze B</div>
           </div>
-          <div class="result-rating">★★★★★ <span style="color:var(--text-muted)">4.8 (3.876 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Abonament Standard · Individ 35 ani</div>
+          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.4 (1.876 recenzii)</span></div>
+          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract 24 luni · App mobilă</div>
         </div>
         <div class="result-price">
-          <div class="result-price-main">79 RON</div>
-          <div class="result-price-period">/ lună</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">948 RON/an</div>
+          <div class="result-price-main">0.26 RON</div>
+          <div class="result-price-period">/ kWh</div>
+          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~130 RON/month</div>
         </div>
       </div>
       <div class="result-features">
-        <span class="feature-badge">✓ Medic de familie</span>
-        <span class="feature-badge">✓ Specialiști</span>
-        <span class="feature-badge">✓ Telemedicină</span>
+        <span class="feature-badge">✓ App mobilă</span>
+        <span class="feature-badge">✓ Suport 24/7</span>
+        <span class="feature-badge">✓ Plată online</span>
       </div>
       <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
+        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
+        <span class="saving-badge">Economisești 360 RON/year</span>
       </div>
     </div>
     <div class="result-card">
       <div class="result-card-top">
         <div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">❤️</span>
-            <div class="result-provider">Furnizor Medical C</div>
+            <span style="font-size:1.5rem;">🔥</span>
+            <div class="result-provider">Furnizor Gaze C</div>
           </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.3 (1.234 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Plan Basic · Include spitalizare</div>
+          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.2 (987 recenzii)</span></div>
+          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract 12 luni · Furnizor național</div>
         </div>
         <div class="result-price">
-          <div class="result-price-main">65 RON</div>
-          <div class="result-price-period">/ lună</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">780 RON/an</div>
+          <div class="result-price-main">0.27 RON</div>
+          <div class="result-price-period">/ kWh</div>
+          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~135 RON/month</div>
         </div>
       </div>
       <div class="result-features">
-        <span class="feature-badge">✓ Spitalizare inclusă</span>
-        <span class="feature-badge">✓ Intervenții chirurgicale</span>
+        <span class="feature-badge">✓ Furnizor de stat</span>
+        <span class="feature-badge">✓ Stabilitate preț</span>
       </div>
       <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
+        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
       </div>
     </div>
   </div>

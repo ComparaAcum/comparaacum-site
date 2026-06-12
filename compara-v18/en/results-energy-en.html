@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Compară abonamente TV 2026 — ComparaAcum.ro</title>
-<link rel="stylesheet" href="css/main.css?v=36"/>
+<title>Compară furnizori energie electrică 2026 — ComparaAcum.ro</title>
+<link rel="stylesheet" href="../css/main.css?v=36"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
@@ -45,184 +45,190 @@ document.addEventListener('click',function(e){
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 <nav class="navbar">
-  <a href="index.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
+  <a href="index-en.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
   <div class="navbar-links">
     <div class="nav-dropdown">
-      <a href="rezultate.html" onclick="return navDrop(this)">Asigurări</a>
+      <a href="results-rca-en.html" onclick="return navDrop(this)">Insurance</a>
       <div class="dropdown-menu">
-        <a href="rezultate.html">🚗 RCA Auto</a>
-        <a href="rezultate-casa.html">🏠 Asigurare Casă</a>
-        <a href="rezultate-sanatate.html">❤️ Asigurare Sănătate</a>
+        <a href="results-rca-en.html">🚗 Car Insurance</a>
+        <a href="results-home-en.html">🏠 Home Insurance</a>
+        <a href="results-health-en.html">❤️ Health Insurance</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-energie.html" onclick="return navDrop(this)">Energie</a>
+      <a href="results-energy-en.html" style="color:var(--accent)">Energy</a>
       <div class="dropdown-menu">
-        <a href="rezultate-energie.html">⚡ Energie Electrică</a>
-        <a href="rezultate-gaze.html">🔥 Gaze Naturale</a>
+        <a href="results-energy-en.html">⚡ Electricity</a>
+        <a href="results-gas-en.html">🔥 Natural Gas</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="rezultate-internet.html" style="color:var(--accent)">Internet &amp; TV</a>
+      <a href="results-internet-en.html" onclick="return navDrop(this)">Internet &amp; TV</a>
       <div class="dropdown-menu">
-        <a href="rezultate-internet.html">📡 Internet Fibră</a>
-        <a href="rezultate-tv.html">📺 Televiziune</a>
-        <a href="rezultate-internet.html">📦 Pachete Internet + TV</a>
+        <a href="results-internet-en.html">📡 Fibre Internet</a>
+        <a href="results-tv-en.html">📺 Television</a>
+        <a href="results-internet-en.html">📦 Internet + TV Bundles</a>
       </div>
     </div>
-    <a href="blog.html">Blog</a>
-    <a href="despre.html">Despre noi</a>
-    <a href="contact.html">Contact</a>
-    <a href="index.html" class="navbar-cta">Compară gratuit</a>
+    <a href="blog-en.html">Blog</a>
+    <a href="about-en.html">About us</a>
+    <a href="contact-en.html">Contact</a>
+    <a href="index-en.html" class="navbar-cta">Compare free</a>
   </div>
   <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('ro', this)">RO</button>
-    <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+    <button class="lang-btn" onclick="window.location.href='../rezultate-energie.html'">RO</button>
+    <button class="lang-btn active">EN</button>
   </div>
 </nav>
 
 <div class="page-hero">
-  <div class="section-label">📺 Televiziune</div>
+  <div class="section-label">⚡ Electricity</div>
 <div style="max-width:1100px;margin:1rem auto 0;padding:0 2rem;">
   <div style="background:rgba(255,215,64,.08);border:1px solid rgba(255,215,64,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:.75rem;align-items:flex-start;">
     <span style="font-size:1.2rem;flex-shrink:0;">ℹ️</span>
     <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;">
-      <strong style="color:var(--warning);">Platformă în faza de lansare.</strong> Datele afișate mai jos sunt demonstrative. Lucrăm la integrarea ofertelor reale de la furnizori — lasă-ne emailul tău și te anunțăm când platforma e complet funcțională!
+      <strong style="color:var(--warning);">Platform in launch phase.</strong> Datele afișate mai jos sunt demonstrative. Lucrăm la integrarea ofertelor reale de la furnizori — lasă-ne emailul tău și te anunțăm când platforma e complet funcțională!
     </p>
   </div>
 </div>
-  <h1>Compară abonamente TV 2026</h1>
-  <p>8 furnizori disponibili · Sute de canale HD și 4K · Economisești până la 200 RON/an</p>
+  <h1>Compară furnizori de energie electrică</h1>
+  <p>8 furnizori disponibili · Economisești până la 540 RON/year</p>
 </div>
 
 <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
+  <!-- Filtru rapid -->
   <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
     <span style="font-size:.85rem;color:var(--text-secondary);font-weight:600;">Filtreaza:</span>
     <select style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
-      <option>Toate tipurile</option><option>Cablu</option><option>Satelit</option><option>IPTV</option>
+      <option>Casnic</option><option>Business</option>
     </select>
     <select style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
-      <option>Orice număr de canale</option><option>50+ canale</option><option>100+ canale</option><option>200+ canale</option>
+      <option>Consum 200 kWh/lună</option><option>Consum 300 kWh/lună</option><option>Consum 400 kWh/lună</option>
+    </select>
+    <select style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
+      <option>Toate județele</option><option>București</option><option>Cluj</option><option>Bacău</option>
     </select>
     <span style="margin-left:auto;font-size:.85rem;color:var(--text-muted);">8 oferte găsite</span>
   </div>
 
   <div class="results-list">
 
+    <!-- Oferta 1 -->
     <div class="result-card">
       <div class="result-card-top">
         <div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">📺</span>
-            <div class="result-provider">Furnizor TV A</div>
-            <span class="saving-badge">Cel mai popular</span>
+            <span style="font-size:1.5rem;">⚡</span>
+            <div class="result-provider">Furnizor Energie A</div>
+            <span class="saving-badge">Most popular</span>
           </div>
-          <div class="result-rating">★★★★★ <span style="color:var(--text-muted)">4.7 (4.231 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">320 canale · HD & 4K · IPTV</div>
+          <div class="result-rating">★★★★★ <span style="color:var(--text-muted)">4.7 (3.241 recenzii)</span></div>
+          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 12 luni · Preț fix garantat</div>
         </div>
         <div class="result-price">
-          <div class="result-price-main">15 RON</div>
-          <div class="result-price-period">/ lună</div>
-          <div class="saving-badge" style="margin-top:6px;">-40% față de medie</div>
+          <div class="result-price-main">0.68 RON</div>
+          <div class="result-price-period">/ kWh</div>
+          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~136 RON/month</div>
+          <div class="saving-badge" style="margin-top:6px;">-18% față de medie</div>
         </div>
       </div>
       <div class="result-features">
-        <span class="feature-badge">✓ 320 canale</span>
-        <span class="feature-badge">✓ 4K Ultra HD</span>
-        <span class="feature-badge">✓ Replay 7 zile</span>
-        <span class="feature-badge">✓ App pe telefon</span>
+        <span class="feature-badge">✓ Preț fix 12 luni</span>
+        <span class="feature-badge">✓ Factură online</span>
+        <span class="feature-badge">✓ Plată card</span>
+        <span class="feature-badge">✓ Fără penalități ieșire</span>
       </div>
       <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
-        <span class="saving-badge">Economisești 180 RON/an</span>
+        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
+        <span class="saving-badge">Economisești 540 RON/year</span>
       </div>
     </div>
 
+    <!-- Oferta 2 -->
     <div class="result-card">
       <div class="result-card-top">
         <div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🟠</span>
-            <div class="result-provider">Furnizor TV B</div>
+            <span style="font-size:1.5rem;">🌱</span>
+            <div class="result-provider">Furnizor Energie B</div>
+            <span style="background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);color:var(--success);font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;">Verde 100%</span>
           </div>
           <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.5 (2.108 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">200 canale · HD · Cablu & IPTV</div>
+          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 24 luni · Energie din surse regenerabile</div>
         </div>
         <div class="result-price">
-          <div class="result-price-main">20 RON</div>
-          <div class="result-price-period">/ lună</div>
+          <div class="result-price-main">0.71 RON</div>
+          <div class="result-price-period">/ kWh</div>
+          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~142 RON/month</div>
         </div>
       </div>
       <div class="result-features">
-        <span class="feature-badge">✓ 200 canale HD</span>
-        <span class="feature-badge">✓ Sport & Film</span>
-        <span class="feature-badge">✓ Pauzare live TV</span>
+        <span class="feature-badge">✓ Energie verde</span>
+        <span class="feature-badge">✓ App mobilă</span>
+        <span class="feature-badge">✓ Contorizare smart</span>
       </div>
       <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
-        <span class="saving-badge">Economisești 120 RON/an</span>
+        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
+        <span class="saving-badge">Economisești 468 RON/year</span>
       </div>
     </div>
 
+    <!-- Oferta 3 -->
     <div class="result-card">
       <div class="result-card-top">
         <div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🛰️</span>
-            <div class="result-provider">Furnizor TV C</div>
+            <span style="font-size:1.5rem;">⚡</span>
+            <div class="result-provider">Furnizor Energie C</div>
           </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.2 (1.456 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">150 canale · Satelit & IPTV</div>
+          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.3 (1.456 recenzii)</span></div>
+          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 12 luni · Energie hidroelectrică</div>
         </div>
         <div class="result-price">
-          <div class="result-price-main">22 RON</div>
-          <div class="result-price-period">/ lună</div>
+          <div class="result-price-main">0.73 RON</div>
+          <div class="result-price-period">/ kWh</div>
+          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~146 RON/month</div>
         </div>
       </div>
       <div class="result-features">
-        <span class="feature-badge">✓ Satelit național</span>
-        <span class="feature-badge">✓ Canale internaționale</span>
-        <span class="feature-badge">✓ Fără contract</span>
+        <span class="feature-badge">✓ Energie hidro</span>
+        <span class="feature-badge">✓ Factură online</span>
+        <span class="feature-badge">✓ Preț fix</span>
       </div>
       <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
+        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
+        <span class="saving-badge">Economisești 420 RON/year</span>
       </div>
     </div>
 
+    <!-- Oferta 4 -->
     <div class="result-card">
       <div class="result-card-top">
         <div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🔵</span>
-            <div class="result-provider">Furnizor TV D</div>
-            <span style="background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);color:var(--success);font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;">Pachet cu internet</span>
+            <span style="font-size:1.5rem;">🔋</span>
+            <div class="result-provider">Furnizor Energie D</div>
           </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.4 (987 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">180 canale · HD · Inclus în pachet internet</div>
+          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.2 (987 recenzii)</span></div>
+          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 12 luni · Plată online</div>
         </div>
         <div class="result-price">
-          <div class="result-price-main">0 RON</div>
-          <div class="result-price-period">cu pachetul internet</div>
+          <div class="result-price-main">0.75 RON</div>
+          <div class="result-price-period">/ kWh</div>
+          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~150 RON/month</div>
         </div>
       </div>
       <div class="result-features">
-        <span class="feature-badge">✓ Gratuit cu internet</span>
-        <span class="feature-badge">✓ 180 canale HD</span>
-        <span class="feature-badge">✓ Netflix inclus 3 luni</span>
+        <span class="feature-badge">✓ Plată online</span>
+        <span class="feature-badge">✓ Suport 24/7</span>
       </div>
       <div class="result-actions">
-        <button class="btn-select">Vezi pachetul complet →</button>
+        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
       </div>
     </div>
 
   </div>
-
-  <div style="background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:1.25rem;margin-top:1.5rem;text-align:center;">
-    <div style="font-weight:700;color:var(--accent);margin-bottom:.5rem;">💡 Sfat: Pachete Internet + TV</div>
-    <p style="font-size:.9rem;color:var(--text-secondary);">Mulți furnizori oferă prețuri mai bune când cumperi internet și TV împreună. <a href="rezultate-internet.html" style="color:var(--accent)">Vezi pachetele combinate →</a></p>
-  </div>
-
-  <p style="text-align:center;color:var(--text-muted);font-size:.8rem;margin-top:2rem;">⚠️ Ofertele sunt demonstrative.</p>
+  <p style="text-align:center;color:var(--text-muted);font-size:.8rem;margin-top:2rem;">⚠️ Ofertele sunt demonstrative. Pricesle reale vor fi disponibile după semnarea parteneriatelor.</p>
 </div>
 
 <section id="notify-form" style="padding:3rem 2rem;">
@@ -240,8 +246,8 @@ document.addEventListener('click',function(e){
 <footer>
   <div class="footer-inner">
     <div class="footer-bottom">
-      <p>© 2026 ComparaAcum.ro — Toate drepturile rezervate</p>
-      <div class="footer-legal"><a href="#">Politică confidențialitate</a><a href="#">Termeni</a></div>
+      <p>© 2026 ComparaAcum.ro — All rights reserved</p>
+      <div class="footer-legal"><a href="#">Privacy policy</a><a href="#">Termeni</a></div>
     </div>
   </div>
 </footer>

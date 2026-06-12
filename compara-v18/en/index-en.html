@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ComparaAcum.ro — Compare Insurance, Energy & Internet in Romania</title>
+<meta name="description" content="Compare RCA insurance, home insurance, electricity, gas and internet providers for free. Find the best deal in 2 minutes."/>
+<link rel="canonical" href="https://comparaacum.ro/"/>
+<link rel="stylesheet" href="../css/main.css?v=36"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* Widget sub-tabs */
+.widget-subtabs{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;}
+.widget-subtab{padding:.4rem .9rem;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:.8rem;font-weight:600;transition:var(--transition);}
+.widget-subtab.active{background:rgba(0,212,255,.15);border-color:var(--accent);color:var(--accent);}
+.widget-subtab:hover{border-color:var(--accent);color:var(--accent);}
+/* Dropdown navbar */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: .7rem; opacity: .6; }
+.dropdown-menu {
+  display: none; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%); min-width: 180px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: .5rem 0; z-index: 1001;
+  padding-top: calc(.5rem + 12px);
+}
+.dropdown-menu a {
+  display: block; padding: .6rem 1.1rem; font-size: .88rem;
+  color: var(--text-secondary) !important; font-weight: 500;
+  transition: var(--transition); white-space: nowrap;
+}
+.dropdown-menu a:hover { color: var(--accent) !important; background: var(--accent-glow); }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RN97LTXFW4');
+</script>
+<script>
+function navDrop(el){
+  var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
+  if(!isTouch)return true;
+  var p=el.parentElement;
+  if(p.classList.contains('open'))return true;
+  var all=document.querySelectorAll('.nav-dropdown.open');
+  for(var i=0;i<all.length;i++){all[i].classList.remove('open');}
+  p.classList.add('open');
+  return false;
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.nav-dropdown')){
+    var all=document.querySelectorAll('.nav-dropdown.open');
+    for(var i=0;i<all.length;i++){all[i].classList.remove('open');}
+  }
+});
+</script>
+<link rel="manifest" href="/manifest.json"/>
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="ComparaAcum"/>
+<meta name="theme-color" content="#0a0a0f"/>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<style>@media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none!important}}</style>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index-en.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
+  <div class="navbar-links">
+    <div class="nav-dropdown">
+      <a href="results-rca-en.html" onclick="return navDrop(this)">Insurance</a>
+      <div class="dropdown-menu">
+        <a href="results-rca-en.html">🚗 Car Insurance</a>
+        <a href="results-home-en.html">🏠 Home Insurance</a>
+        <a href="results-health-en.html">❤️ Health Insurance</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="results-energy-en.html" onclick="return navDrop(this)">Energy</a>
+      <div class="dropdown-menu">
+        <a href="results-energy-en.html">⚡ Energy Electrică</a>
+        <a href="results-gas-en.html">🔥 Natural Gas</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="results-internet-en.html" onclick="return navDrop(this)">Internet &amp; TV</a>
+      <div class="dropdown-menu">
+        <a href="results-internet-en.html">📡 Fibre Internet</a>
+        <a href="results-tv-en.html">📺 Television</a>
+        <a href="results-internet-en.html">📦 Internet + TV Bundles</a>
+      </div>
+    </div>
+    <a href="blog-en.html">Blog</a>
+    <a href="about-en.html">About us</a>
+    <a href="contact-en.html">Contact</a>
+    <a href="index-en.html" class="navbar-cta">Compare free</a>
+  </div>
+  <div class="lang-switcher">
+    <button class="lang-btn" onclick="window.location.href='../index.html'">RO</button>
+    <button class="lang-btn active">EN</button>
+  </div>
+</nav>
+
+<!-- MASCOTA FIXA PE FUNDAL -->
+<div class="mascot-fixed">
+  <img src="../images/mascota-v6.png" alt="" aria-hidden="true"/>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🇷🇴 Romania's free comparison platform</div>
+    <h1>Save money in less than <span class="accent">2 minutes</span></h1>
+    <p>Compare free asigurări RCA, asigurări casă, energie electrică, gaze naturale și internet. Fără apeluri telefonice, fără birocrație.</p>
+    <div class="compare-widget" style="margin-top:2.5rem;text-align:left;">
+      <!-- Main tabs -->
+      <div class="widget-tabs">
+        <button class="widget-tab active" onclick="switchTab('rca',this)">🚗 Car Insurance</button>
+        <button class="widget-tab" onclick="switchTab('casa',this)">🏠 Home</button>
+        <button class="widget-tab" onclick="switchTab('energie',this)">⚡ Energy</button>
+        <button class="widget-tab" onclick="switchTab('internet',this)">📡 Internet &amp; TV</button>
+        <button class="widget-tab" onclick="switchTab('sanatate',this)">❤️ Health</button>
+      </div>
+
+      <!-- RCA: sub-tabs RCA Obligatorie / Casco -->
+      <div id="section-rca" class="widget-section">
+        <div class="widget-subtabs">
+          <button class="widget-subtab active" onclick="switchSubTab('rca-obligatorie',this)">🛡️ Mandatory Insurance</button>
+          <button class="widget-subtab" onclick="switchSubTab('rca-casco',this)">🔒 Comprehensive</button>
+        </div>
+        <div id="form-rca-obligatorie" class="widget-form">
+          <div class="form-group"><label>Car make</label><select><option>Dacia</option><option>Volkswagen</option><option>Renault</option><option>Ford</option><option>BMW</option><option>Toyota</option><option>Skoda</option><option>Opel</option></select></div>
+          <div class="form-group"><label>Year of manufacture</label><select><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option></select></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Timiș</option><option>Iași</option><option>Bacău</option><option>Constanța</option><option>Brașov</option></select></div>
+          <div class="form-group"><label>Driver's age</label><select><option>18-25 years</option><option>26-35 years</option><option>36-45 years</option><option>46-55 years</option><option>56+ years</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+        <div id="form-rca-casco" class="widget-form" style="display:none">
+          <div class="form-group"><label>Car make</label><select><option>Dacia</option><option>Volkswagen</option><option>Renault</option><option>Ford</option><option>BMW</option><option>Toyota</option><option>Skoda</option><option>Opel</option></select></div>
+          <div class="form-group"><label>Year of manufacture</label><select><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option></select></div>
+          <div class="form-group"><label>Vehicle value (RON)</label><input type="number" placeholder="ex: 50000"/></div>
+          <div class="form-group"><label>Excess</label><select><option>No excess</option><option>500 RON</option><option>1000 RON</option><option>2000 RON</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+      </div>
+
+      <!-- Casa -->
+      <div id="section-casa" class="widget-section" style="display:none">
+        <div class="widget-form">
+          <div class="form-group"><label>Property type</label><select><option>Apartment</option><option>Casă</option><option>Villa</option></select></div>
+          <div class="form-group"><label>Area (sqm)</label><input type="number" placeholder="ex: 75"/></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Iași</option><option>Bacău</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+      </div>
+
+      <!-- Energy: sub-tabs Curent / Gaze -->
+      <div id="section-energie" class="widget-section" style="display:none">
+        <div class="widget-subtabs">
+          <button class="widget-subtab active" onclick="switchSubTab('energie-curent',this)">⚡ Electricity</button>
+          <button class="widget-subtab" onclick="switchSubTab('energie-gaze',this)">🔥 Natural Gas</button>
+        </div>
+        <div id="form-energie-curent" class="widget-form">
+          <div class="form-group"><label>Contract type</label><select><option>Residential</option><option>Business</option></select></div>
+          <div class="form-group"><label>Monthly usage (kWh)</label><input type="number" placeholder="ex: 200"/></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Iași</option><option>Bacău</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+        <div id="form-energie-gaze" class="widget-form" style="display:none">
+          <div class="form-group"><label>Contract type</label><select><option>Residential</option><option>Business</option></select></div>
+          <div class="form-group"><label>Monthly usage (m³)</label><input type="number" placeholder="ex: 50"/></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Iași</option><option>Bacău</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+      </div>
+
+      <!-- Internet & TV: sub-tabs -->
+      <div id="section-internet" class="widget-section" style="display:none">
+        <div class="widget-subtabs">
+          <button class="widget-subtab active" onclick="switchSubTab('net-fibra',this)">📡 Fibre Internet</button>
+          <button class="widget-subtab" onclick="switchSubTab('net-tv',this)">📺 Television</button>
+          <button class="widget-subtab" onclick="switchSubTab('net-pachet',this)">📦 Internet + TV</button>
+        </div>
+        <div id="form-net-fibra" class="widget-form">
+          <div class="form-group"><label>Desired speed</label><select><option>100 Mbps</option><option>300 Mbps</option><option>500 Mbps</option><option>1 Gbps</option></select></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Iași</option><option>Bacău</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+        <div id="form-net-tv" class="widget-form" style="display:none">
+          <div class="form-group"><label>Reception type</label><select><option>Cable</option><option>Satellite</option><option>IPTV</option></select></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Iași</option><option>Bacău</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+        <div id="form-net-pachet" class="widget-form" style="display:none">
+          <div class="form-group"><label>Internet speed</label><select><option>100 Mbps</option><option>300 Mbps</option><option>1 Gbps</option></select></div>
+          <div class="form-group"><label>TV channels</label><select><option>Basic package</option><option>Sport included</option><option>Cinema included</option><option>Full package</option></select></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Iași</option><option>Bacău</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+      </div>
+
+      <!-- Sanatate -->
+      <div id="section-sanatate" class="widget-section" style="display:none">
+        <div class="widget-form">
+          <div class="form-group"><label>Age</label><input type="number" placeholder="ex: 35"/></div>
+          <div class="form-group"><label>Insurance type</label><select><option>Individual</option><option>Family</option></select></div>
+          <div class="form-group"><label>County</label><select><option>Bucharest</option><option>Cluj</option><option>Iași</option><option>Bacău</option></select></div>
+          <button class="widget-submit" onclick="showResults()">🔍 Compare offers</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item"><div class="stat-value">7+</div><div class="stat-label">Comparison categories</div></div>
+    <div class="stat-item"><div class="stat-value">Free</div><div class="stat-label">For all users</div></div>
+    <div class="stat-item"><div class="stat-value">2 min</div><div class="stat-label">Average comparison time</div></div>
+    <div class="stat-item"><div class="stat-value">Impartial</div><div class="stat-label">Independent from providers</div></div>
+    <div class="stat-item"><div class="stat-value">48+</div><div class="stat-label">Providers monitored</div></div>
+  </div>
+</div>
+
+<!-- CATEGORII -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">What you can compare</div>
+    <h2 class="section-title">All categories in one place</h2>
+    <p class="section-subtitle">From mandatory insurance to energy and internet providers — we compare everything you need.</p>
+    <div class="categories-grid">
+      <a href="results-rca-en.html" class="category-card"><div class="category-icon">🚗</div><div class="category-name">Car Insurance</div><div class="category-count">18 providers</div></a>
+      <a href="results-home-en.html" class="category-card"><div class="category-icon">🏠</div><div class="category-name">Home Insurance</div><div class="category-count">12 providers</div></a>
+      <a href="results-energy-en.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Energy Electrică</div><div class="category-count">8 providers</div></a>
+      <a href="results-gas-en.html" class="category-card"><div class="category-icon">🔥</div><div class="category-name">Natural Gas</div><div class="category-count">6 providers</div></a>
+      <a href="results-internet-en.html" class="category-card"><div class="category-icon">📡</div><div class="category-name">Internet</div><div class="category-count">10 providers</div></a>
+      <a href="results-health-en.html" class="category-card"><div class="category-icon">❤️</div><div class="category-name">Health Insurance</div><div class="category-count">9 providers</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CUM FUNCȚIONEAZĂ -->
+<section style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <div class="section-label">Simple and fast</div>
+    <h2 class="section-title">How ComparaAcum.ro works</h2>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><div class="step-title">Full packageezi datele</div><div class="step-desc">A few basic details — takes under 2 minutes.</div></div>
+      <div class="step-card"><div class="step-num">2</div><div class="step-title">Compare the offers</div><div class="step-desc">We show offers from all providers, sorted by price and rating.</div></div>
+      <div class="step-card"><div class="step-num">3</div><div class="step-title">Choose the best one</div><div class="step-desc">Select the right offer and complete directly with the provider.</div></div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-title">You save</div><div class="step-desc">Clienții noștri economisesc în medie 1.200 RON pe an. Free, mereu.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALE -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">Customer reviews</div>
+    <h2 class="section-title">What our users say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-saving">Savings: 380 RON/year on car insurance</div>
+        <p class="testimonial-text">"I found a car insurance policy 380 RON cheaper than my old one. All done in 3 minutes, no phone calls."</p>
+        <div class="testimonial-author">Mihai D.</div>
+        <div class="testimonial-location">Cluj-Napoca</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-saving">Savings: 540 RON/year on energy</div>
+        <p class="testimonial-text">"I switched energy provider and now pay 45 RON less per month. I didn't know it was this simple."</p>
+        <div class="testimonial-author">Andreea M.</div>
+        <div class="testimonial-location">Bucharest</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-saving">Savings: 280 RON/year on internet</div>
+        <p class="testimonial-text">"Faster speed, lower price. Found an internet provider 280 RON cheaper per year. Highly recommend!"</p>
+        <div class="testimonial-author">Bogdan T.</div>
+        <div class="testimonial-location">Bacău</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:2rem;">
+  <div class="section-inner">
+    <div class="cta-banner">
+      <h2>Ready to save money?</h2>
+      <p>Compară ofertele de asigurări, energie și internet în 2 minute. Free, fără apeluri telefonice, fără birocrație.</p>
+      <a href="#" class="btn-primary" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">🚀 Compare free acum</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- MASCOTA MOBIL - sectiune dedicata -->
+<section class="mascot-mobile-section">
+  <img src="../images/mascota-v6.png" alt="ComparaAcum.ro - Compara si economisesti"/>
+  <p>🇷🇴 Compară. Alege. You save.</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="navbar-logo">Compara<span>Acum</span>.ro</div>
+        <p>Romania's first platform that lets you compare insurance, energy and internet for free — transparent, fast and with no hidden fees.</p>
+      </div>
+
+        <h4>Products</h4>
+        <a href="results-rca-en.html">Car Insurance</a>
+        <a href="results-home-en.html">Home Insurance</a>
+        <a href="results-energy-en.html">Energy Electrică</a>
+        <a href="results-gas-en.html">Natural Gas</a>
+        <a href="results-internet-en.html">Internet &amp; TV</a>
+        <a href="results-health-en.html">Health Insurance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about-en.html">About us</a>
+        <a href="blog-en.html">Blog</a>
+        <a href="contact-en.html">Contact</a>
+        <a href="partner-en.html">Become a partner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">GDPR</a>
+        <a href="#">Cookie policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ComparaAcum.ro — All rights reserved</p>
+      <div class="footer-legal"><a href="#">Cookie policy</a><a href="#">ANPC</a><a href="#">SOL</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab switching
+function switchTab(tab, btn) {
+  document.querySelectorAll('.widget-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.widget-section').forEach(s => s.style.display = 'none');
+  document.getElementById('section-' + tab).style.display = 'block';
+}
+function switchSubTab(formId, btn) {
+  var section = btn.closest('.widget-section');
+  section.querySelectorAll('.widget-subtab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  section.querySelectorAll('.widget-form').forEach(f => f.style.display = 'none');
+  document.getElementById('form-' + formId).style.display = 'block';
+}
+function showResults() {
+  var activeTab = document.querySelector('.widget-tab.active');
+  var tabText = activeTab ? activeTab.textContent : '';
+  var url = 'rezultate.html';
+  if (tabText.indexOf('Energy') !== -1) url = 'rezultate-energie.html';
+  else if (tabText.indexOf('Internet') !== -1) url = 'rezultate-internet.html';
+  else if (tabText.indexOf('Cas') !== -1) url = 'rezultate-casa.html';
+  else if (tabText.indexOf('n') !== -1 && tabText.indexOf('tate') !== -1) url = 'rezultate-sanatate.html';
+  window.location.href = url;
+}
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+// Custom cursor — desktop only
+if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+  // Custom cursor
+  var dot = document.getElementById('cursor-dot');
+  var ring = document.getElementById('cursor-ring');
+  var mx=0,my=0,rx=-200,ry=-200,started=false;
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX;my=e.clientY;
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+    if(!started){rx=mx;ry=my;started=true;}
+  });
+  function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}
+  animRing();
+  document.addEventListener('mouseover',function(e){
+    var el=e.target.closest('a,button,[role="button"],.category-card,.widget-tab,.widget-subtab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit');
+    document.body.classList.toggle('hovering',!!el);
+  });
+  document.addEventListener('mouseout',function(e){
+    if(!e.relatedTarget||!e.relatedTarget.closest('a,button,[role="button"],.category-card,.widget-tab,.widget-subtab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit')){
+      document.body.classList.remove('hovering');
+    }
+  });
+}
+</script>
+<script>
+// Touch dropdown support v2 - works on any touch-capable device
+(function(){
+  var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
+  if(!isTouch) return;
+  document.querySelectorAll('.nav-dropdown > a').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var parent = this.parentElement;
+      var menu = parent.querySelector('.dropdown-menu');
+      if(menu && !parent.classList.contains('open')){
+        e.preventDefault();
+        e.stopPropagation();
+        document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
+        parent.classList.add('open');
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-dropdown')){
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
+    }
+  });
+})();
+</script>
+</body>
+</html>
