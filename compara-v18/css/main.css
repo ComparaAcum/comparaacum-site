@@ -30,7 +30,7 @@ nav a, nav button, .nav-links a, .nav-cta, .logo{cursor:none}
 .hero-content{position:relative;z-index:1;max-width:800px;width:100%;box-sizing:border-box}
 /* Mascota fixa pe fundal - ramane pe loc la scroll */
 .mascot-fixed{position:fixed;left:calc(75% + 275px);transform:translateX(-50%);bottom:0;z-index:10;pointer-events:none;opacity:.95}
-.mascot-fixed img{height:72vh;max-height:720px;width:auto;mix-blend-mode:multiply}
+.mascot-fixed img{height:72vh;max-height:720px;width:auto}
 @media(max-width:1500px){.mascot-fixed img{height:48vh}}
 @media(max-width:1250px){.mascot-fixed{display:none}}
 .hero-badge{display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);padding:.35rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.5rem;max-width:100%}
@@ -155,7 +155,7 @@ body.hovering #cursor-ring{width:52px;height:52px;border-color:rgba(0,212,255,.8
 
 /* Mascota sectiune mobil */
 .mascot-mobile-section{display:none;text-align:center;padding:2rem 1rem;background:var(--bg-secondary)}
-.mascot-mobile-section img{width:85%;max-width:340px;height:auto;mix-blend-mode:multiply}
+.mascot-mobile-section img{width:85%;max-width:340px;height:auto}
 .mascot-mobile-section p{color:var(--text-secondary);font-size:.95rem;margin-top:.75rem;font-style:italic}
 @media(max-width:1250px){.mascot-mobile-section{display:block}}
 
