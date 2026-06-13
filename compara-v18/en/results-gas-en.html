@@ -3,44 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Compară furnizori gaze naturale 2026 — ComparaAcum.ro</title>
-<link rel="stylesheet" href="../css/main.css?v=36"/>
+<title>Natural Gas Provider Comparison — ComparaAcum.ro</title>
+<meta name="description" content="Compare natural gas tariffs from Romanian providers. Save on your gas bill."/>
+<link rel="stylesheet" href="../css/main.css?v=37"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RN97LTXFW4');</script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RN97LTXFW4');
-</script>
-<script>
-function navDrop(el){
-  var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
-  if(!isTouch)return true;
-  var p=el.parentElement;
-  if(p.classList.contains('open'))return true;
-  var all=document.querySelectorAll('.nav-dropdown.open');
-  for(var i=0;i<all.length;i++){all[i].classList.remove('open');}
-  p.classList.add('open');
-  return false;
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('.nav-dropdown')){
-    var all=document.querySelectorAll('.nav-dropdown.open');
-    for(var i=0;i<all.length;i++){all[i].classList.remove('open');}
-  }
-});
+function navDrop(el){var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;if(!isTouch)return true;var p=el.parentElement;if(p.classList.contains('open'))return true;var all=document.querySelectorAll('.nav-dropdown.open');for(var i=0;i<all.length;i++){all[i].classList.remove('open');}p.classList.add('open');return false;}
+document.addEventListener('click',function(e){if(!e.target.closest('.nav-dropdown')){var all=document.querySelectorAll('.nav-dropdown.open');for(var i=0;i<all.length;i++){all[i].classList.remove('open');}}});
 </script>
 <link rel="manifest" href="/manifest.json"/>
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-<meta name="apple-mobile-web-app-title" content="ComparaAcum"/>
 <meta name="theme-color" content="#0a0a0f"/>
 </head>
 <body>
-<!-- Custom cursor -->
 <style>@media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none!important}}</style>
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
@@ -56,7 +32,7 @@ document.addEventListener('click',function(e){
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="results-energy-en.html" style="color:var(--accent)">Energy</a>
+      <a href="results-energy-en.html" onclick="return navDrop(this)">Energy</a>
       <div class="dropdown-menu">
         <a href="results-energy-en.html">⚡ Electricity</a>
         <a href="results-gas-en.html">🔥 Natural Gas</a>
@@ -82,159 +58,80 @@ document.addEventListener('click',function(e){
 </nav>
 <div class="page-hero">
   <div class="section-label">🔥 Natural Gas</div>
-<div style="max-width:1100px;margin:1rem auto 0;padding:0 2rem;">
-  <div style="background:rgba(255,215,64,.08);border:1px solid rgba(255,215,64,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:.75rem;align-items:flex-start;">
-    <span style="font-size:1.2rem;flex-shrink:0;">ℹ️</span>
-    <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;">
-      <strong style="color:var(--warning);">Platform in launch phase.</strong> Datele afișate mai jos sunt demonstrative. Lucrăm la integrarea ofertelor reale de la furnizori — lasă-ne emailul tău și te anunțăm când platforma e complet funcțională!
-    </p>
-  </div>
+  <h1>Compare natural gas providers</h1>
+  <p>Find the best natural gas tariff for your home. Compare all Romanian providers instantly.</p>
 </div>
-  <h1>Compară furnizori de gaze naturale</h1>
-  <p>6 furnizori disponibili · Economisești până la 480 RON/year</p>
+<section>
+  <div class="section-inner" style="max-width:800px;">
+    <div style="background:rgba(255,200,0,.12);border:1px solid rgba(255,200,0,.3);border-radius:8px;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:.9rem;color:#f4b942;">
+  ⚠️ <strong>Platform in launch phase.</strong> The offers displayed are indicative. Prices and conditions may differ from those of the actual providers. The comparison feature will be fully active soon.
 </div>
-<div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
-  <div class="results-list">
-    <div class="result-card">
-      <div class="result-card-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🔥</span>
-            <div class="result-provider">Furnizor Gaze A</div>
-            <span class="saving-badge">Recommended</span>
-          </div>
-          <div class="result-rating">★★★★★ <span style="color:var(--text-muted)">4.6 (2.341 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract 12 luni · Preț fix garantat</div>
-        </div>
-        <div class="result-price">
-          <div class="result-price-main">0.24 RON</div>
-          <div class="result-price-period">/ kWh</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~120 RON/month</div>
-          <div class="saving-badge" style="margin-top:6px;">-20% față de medie</div>
-        </div>
-      </div>
-      <div class="result-features">
-        <span class="feature-badge">✓ Preț fix 12 luni</span>
-        <span class="feature-badge">✓ Factură online</span>
-        <span class="feature-badge">✓ Fără penalități</span>
-      </div>
-      <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
-        <span class="saving-badge">Economisești 480 RON/year</span>
-      </div>
+    <div style="display:grid;gap:1rem;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <div style="flex-basis:100%;"><div style="background:var(--accent);color:#000;font-size:.7rem;font-weight:800;padding:.2rem .6rem;border-radius:4px;display:inline-block;margin-bottom:.5rem;">CHEAPEST</div></div>
+      <div style="flex:1;min-width:140px;"><strong style="font-size:1.1rem;">Provider A</strong><br/><span style="color:var(--text-secondary);font-size:.85rem;">★★★★★ 4.6/5</span></div>
+      <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:var(--accent);">0.185</div><div style="color:var(--text-secondary);font-size:.8rem;">RON/m³</div></div>
+      <button onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})" class="btn-select" style="padding:.6rem 1.2rem;border-radius:8px;background:var(--accent);color:#000;font-weight:700;border:none;cursor:pointer;">🔔 Notify me at launch</button>
+    </div><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <div style="flex-basis:100%;"><div style="background:#7c3aed;color:#fff;font-size:.7rem;font-weight:800;padding:.2rem .6rem;border-radius:4px;display:inline-block;margin-bottom:.5rem;">RECOMMENDED</div></div>
+      <div style="flex:1;min-width:140px;"><strong style="font-size:1.1rem;">Provider B</strong><br/><span style="color:var(--text-secondary);font-size:.85rem;">★★★★☆ 4.4/5</span></div>
+      <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:var(--accent);">0.196</div><div style="color:var(--text-secondary);font-size:.8rem;">RON/m³</div></div>
+      <button onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})" class="btn-select" style="padding:.6rem 1.2rem;border-radius:8px;background:var(--accent);color:#000;font-weight:700;border:none;cursor:pointer;">🔔 Notify me at launch</button>
+    </div><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      
+      <div style="flex:1;min-width:140px;"><strong style="font-size:1.1rem;">Provider C</strong><br/><span style="color:var(--text-secondary);font-size:.85rem;">★★★☆☆ 4.0/5</span></div>
+      <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:var(--accent);">0.210</div><div style="color:var(--text-secondary);font-size:.8rem;">RON/m³</div></div>
+      <button onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})" class="btn-select" style="padding:.6rem 1.2rem;border-radius:8px;background:var(--accent);color:#000;font-weight:700;border:none;cursor:pointer;">🔔 Notify me at launch</button>
     </div>
-    <div class="result-card">
-      <div class="result-card-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🔥</span>
-            <div class="result-provider">Furnizor Gaze B</div>
-          </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.4 (1.876 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract 24 luni · App mobilă</div>
-        </div>
-        <div class="result-price">
-          <div class="result-price-main">0.26 RON</div>
-          <div class="result-price-period">/ kWh</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~130 RON/month</div>
-        </div>
-      </div>
-      <div class="result-features">
-        <span class="feature-badge">✓ App mobilă</span>
-        <span class="feature-badge">✓ Suport 24/7</span>
-        <span class="feature-badge">✓ Plată online</span>
-      </div>
-      <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
-        <span class="saving-badge">Economisești 360 RON/year</span>
-      </div>
     </div>
-    <div class="result-card">
-      <div class="result-card-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🔥</span>
-            <div class="result-provider">Furnizor Gaze C</div>
-          </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.2 (987 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract 12 luni · Furnizor național</div>
-        </div>
-        <div class="result-price">
-          <div class="result-price-main">0.27 RON</div>
-          <div class="result-price-period">/ kWh</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~135 RON/month</div>
-        </div>
-      </div>
-      <div class="result-features">
-        <span class="feature-badge">✓ Furnizor de stat</span>
-        <span class="feature-badge">✓ Stabilitate preț</span>
-      </div>
-      <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Notify me at launch</button>
-      </div>
-    </div>
-  </div>
-  <p style="text-align:center;color:var(--text-muted);font-size:.8rem;margin-top:2rem;">⚠️ Ofertele sunt demonstrative.</p>
+    <div id="notify-form" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;margin-top:2rem;text-align:center;">
+  <h3 style="margin-bottom:.5rem;">Be notified when we launch</h3>
+  <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:1rem;">Leave your email and we'll let you know when live prices are available.</p>
+  <form action="https://formspree.io/f/xkoavoap" method="POST" style="display:flex;gap:.5rem;max-width:400px;margin:0 auto;flex-wrap:wrap;">
+    <input type="email" name="email" placeholder="your@email.com" required style="flex:1;min-width:200px;padding:.75rem;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);"/>
+    <button type="submit" class="widget-submit" style="padding:.75rem 1.5rem;">Notify me 🔔</button>
+  </form>
 </div>
-<section id="notify-form" style="padding:3rem 2rem;">
-  <div style="max-width:600px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border-accent);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;box-shadow:var(--shadow-accent);">
-    <div style="font-size:2.5rem;margin-bottom:1rem;">🔔</div>
-    <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.75rem;">Fii primul care compară oferte reale</h2>
-    <p style="color:var(--text-secondary);font-size:.95rem;margin-bottom:1.5rem;line-height:1.7;">Platforma se lansează în curând cu oferte reale de la furnizori. Lasă-ne emailul și te anunțăm imediat ce e gata — fără spam, promitem!</p>
-    <form action="https://formspree.io/f/xkoavoap" method="POST" style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;">
-      <input type="email" name="email" placeholder="emailul tău" required style="flex:1;min-width:220px;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.85rem 1.1rem;border-radius:8px;font-size:.95rem;font-family:var(--font);"/>
-      <button type="submit" class="btn-primary" style="white-space:nowrap;">Anunță-mă →</button>
-    </form>
-    <p style="font-size:.75rem;color:var(--text-muted);margin-top:1rem;">Ne pasă de datele tale. Emailul tău nu va fi vândut sau partajat cu nimeni.</p>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="index-en.html" class="btn-secondary">← Back to home</a>
+    </div>
   </div>
 </section>
-<footer><div class="footer-inner"><div class="footer-bottom"><p>© 2026 ComparaAcum.ro</p></div></div></footer>
-<script>
-if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
-  const dot=document.getElementById('cursor-dot');
-  const ring=document.getElementById('cursor-ring');
-  let mx=0,my=0,rx=-200,ry=-200,started=false;
-  document.addEventListener('mousemove',e=>{
-    mx=e.clientX;my=e.clientY;
-    dot.style.left=mx+'px';dot.style.top=my+'px';
-    if(!started){rx=mx;ry=my;started=true;}
-  });
-  function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}
-  animRing();
-  document.addEventListener('mouseover',e=>{
-    const el=e.target.closest('a,button,[role="button"],.category-card,.widget-tab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit');
-    document.body.classList.toggle('hovering',!!el);
-  });
-  document.addEventListener('mouseout',e=>{
-    if(!e.relatedTarget||!e.relatedTarget.closest('a,button,[role="button"],.category-card,.widget-tab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit')){
-      document.body.classList.remove('hovering');
-    }
-  });
-}
-</script>
-<script>
-// Touch dropdown support v2 - works on any touch-capable device
-(function(){
-  var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0 || window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches;
-  if(!isTouch) return;
-  document.querySelectorAll('.nav-dropdown > a').forEach(function(link){
-    link.addEventListener('click', function(e){
-      var parent = this.parentElement;
-      var menu = parent.querySelector('.dropdown-menu');
-      if(menu && !parent.classList.contains('open')){
-        e.preventDefault();
-        e.stopPropagation();
-        document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
-        parent.classList.add('open');
-      }
-    });
-  });
-  document.addEventListener('click', function(e){
-    if(!e.target.closest('.nav-dropdown')){
-      document.querySelectorAll('.nav-dropdown.open').forEach(function(d){d.classList.remove('open')});
-    }
-  });
-})();
-</script>
-</body>
-</html>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="navbar-logo">Compara<span>Acum</span>.ro</div>
+        <p>Romania's first platform to compare insurance, energy and internet for free.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="results-rca-en.html">Car Insurance</a>
+        <a href="results-home-en.html">Home Insurance</a>
+        <a href="results-energy-en.html">Electricity</a>
+        <a href="results-gas-en.html">Natural Gas</a>
+        <a href="results-internet-en.html">Internet &amp; TV</a>
+        <a href="results-health-en.html">Health Insurance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about-en.html">About us</a>
+        <a href="blog-en.html">Blog</a>
+        <a href="contact-en.html">Contact</a>
+        <a href="partner-en.html">Become a partner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">GDPR</a>
+        <a href="#">Cookie policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ComparaAcum.ro — All rights reserved</p>
+      <div class="footer-legal"><a href="#">Cookie policy</a><a href="#">ANPC</a><a href="#">SOL</a></div>
+    </div>
+  </div>
+</footer>
+</body></html>
