@@ -6,7 +6,7 @@
 <title>ComparaAcum.ro — Compare Insurance, Energy & Internet in Romania</title>
 <meta name="description" content="Compare RCA insurance, home insurance, electricity, gas and internet providers for free. Find the best deal in 2 minutes."/>
 <link rel="canonical" href="https://comparaacum.ro/"/>
-<link rel="stylesheet" href="../css/main.css?v=37"/>
+<link rel="stylesheet" href="../css/main.css?v=39"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 /* Widget sub-tabs */
@@ -89,7 +89,7 @@ document.addEventListener('click',function(e){
     <div class="nav-dropdown">
       <a href="results-energy-en.html" onclick="return navDrop(this)">Energy</a>
       <div class="dropdown-menu">
-        <a href="results-energy-en.html">⚡ Energy Electrică</a>
+        <a href="results-energy-en.html">⚡ Electricity</a>
         <a href="results-gas-en.html">🔥 Natural Gas</a>
       </div>
     </div>
@@ -244,7 +244,7 @@ document.addEventListener('click',function(e){
     <div class="categories-grid">
       <a href="results-rca-en.html" class="category-card"><div class="category-icon">🚗</div><div class="category-name">Car Insurance</div><div class="category-count">18 providers</div></a>
       <a href="results-home-en.html" class="category-card"><div class="category-icon">🏠</div><div class="category-name">Home Insurance</div><div class="category-count">12 providers</div></a>
-      <a href="results-energy-en.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Energy Electrică</div><div class="category-count">8 providers</div></a>
+      <a href="results-energy-en.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Electricity</div><div class="category-count">8 providers</div></a>
       <a href="results-gas-en.html" class="category-card"><div class="category-icon">🔥</div><div class="category-name">Natural Gas</div><div class="category-count">6 providers</div></a>
       <a href="results-internet-en.html" class="category-card"><div class="category-icon">📡</div><div class="category-name">Internet</div><div class="category-count">10 providers</div></a>
       <a href="results-health-en.html" class="category-card"><div class="category-icon">❤️</div><div class="category-name">Health Insurance</div><div class="category-count">9 providers</div></a>
@@ -326,7 +326,7 @@ document.addEventListener('click',function(e){
         <h4>Products</h4>
         <a href="results-rca-en.html">Car Insurance</a>
         <a href="results-home-en.html">Home Insurance</a>
-        <a href="results-energy-en.html">Energy Electrică</a>
+        <a href="results-energy-en.html">Electricity</a>
         <a href="results-gas-en.html">Natural Gas</a>
         <a href="results-internet-en.html">Internet &amp; TV</a>
         <a href="results-health-en.html">Health Insurance</a>
@@ -371,11 +371,11 @@ function switchSubTab(formId, btn) {
 function showResults() {
   var activeTab = document.querySelector('.widget-tab.active');
   var tabText = activeTab ? activeTab.textContent : '';
-  var url = 'rezultate.html';
-  if (tabText.indexOf('Energy') !== -1) url = 'rezultate-energie.html';
-  else if (tabText.indexOf('Internet') !== -1) url = 'rezultate-internet.html';
-  else if (tabText.indexOf('Cas') !== -1) url = 'rezultate-casa.html';
-  else if (tabText.indexOf('n') !== -1 && tabText.indexOf('tate') !== -1) url = 'rezultate-sanatate.html';
+  var url = 'results-rca-en.html';
+  if (tabText.indexOf('Energy') !== -1) url = 'results-energy-en.html';
+  else if (tabText.indexOf('Internet') !== -1) url = 'results-internet-en.html';
+  else if (tabText.indexOf('Home') !== -1) url = 'results-home-en.html';
+  else if (tabText.indexOf('Health') !== -1) url = 'results-health-en.html';
   window.location.href = url;
 }
 function setLang(lang, btn) {
