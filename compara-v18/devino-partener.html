@@ -96,6 +96,7 @@ document.addEventListener('click',function(e){
     <a href="contact.html">Contact</a>
     <a href="index.html" class="navbar-cta">Compară gratuit</a>
   </div>
+  <button class="navbar-toggle" aria-label="Meniu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
   <div class="lang-switcher">
     <button class="lang-btn active" onclick="setLang('ro', this)">RO</button>
     <button class="lang-btn" onclick="window.location.href='en/partner-en.html'">EN</button>
@@ -213,12 +214,16 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouch
   var dot=document.getElementById('cursor-dot');
   var ring=document.getElementById('cursor-ring');
   if(dot&&ring){
-    var mouseX=0,mouseY=0,ringX=0,ringY=0;
-    document.addEventListener('mousemove',function(e){
+    var mouseX=0,mouseY=0,ringX=0,ringY=0,initialized=false;
+    function setPos(e){
       mouseX=e.clientX;mouseY=e.clientY;
+      if(!initialized){ringX=mouseX;ringY=mouseY;initialized=true;}
       dot.style.setProperty('--cx',mouseX+'px');
       dot.style.setProperty('--cy',mouseY+'px');
-    });
+    }
+    document.addEventListener('mousemove',setPos);
+    document.addEventListener('mousedown',setPos);
+    document.addEventListener('pointermove',function(e){mouseX=e.clientX;mouseY=e.clientY;if(!initialized){ringX=mouseX;ringY=mouseY;initialized=true;}},{passive:true});
     function animateRing(){
       ringX+=(mouseX-ringX)*0.15;
       ringY+=(mouseY-ringY)*0.15;
@@ -260,6 +265,10 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouch
     }
   });
 })();
+</script>
+<script>
+function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'\u2715':'\u2630';b.setAttribute('aria-expanded',o);}
+document.addEventListener('click',function(e){var l=document.querySelector('.navbar-links'),t=document.querySelector('.navbar-toggle');if(l&&l.classList.contains('open')&&!e.target.closest('.navbar-links')&&!e.target.closest('.navbar-toggle')){l.classList.remove('open');if(t){t.innerHTML='\u2630';t.setAttribute('aria-expanded','false');}}});
 </script>
 </body>
 </html>
