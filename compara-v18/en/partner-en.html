@@ -171,9 +171,9 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
   const dot=document.getElementById('cursor-dot');
   const ring=document.getElementById('cursor-ring');
   let mx=0,my=0,rx=-200,ry=-200,started=false;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';if(!started){rx=mx;ry=my;started=true;}});
-  function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}
-  animRing();
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;var cx='calc('+mx+'px - 50%)',cy='calc('+my+'px - 50%)';dot.style.setProperty('--cx',cx);dot.style.setProperty('--cy',cy);ring.style.setProperty('--cx',cx);ring.style.setProperty('--cy',cy);if(!started){rx=mx;ry=my;started=true;}});
+  
+  
 }
 </script>
 </body></html>
