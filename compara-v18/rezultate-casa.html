@@ -187,26 +187,32 @@ document.addEventListener('click',function(e){
 </section>
 <footer><div class="footer-inner"><div class="footer-bottom"><p>© 2026 ComparaAcum.ro</p></div></div></footer>
 <script>
-if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
-  const dot=document.getElementById('cursor-dot');
-  const ring=document.getElementById('cursor-ring');
-  let mx=0,my=0,rx=-200,ry=-200,started=false;
-  document.addEventListener('mousemove',e=>{
-    mx=e.clientX;my=e.clientY;
-    var cx='calc('+mx+'px - 50%)',cy='calc('+my+'px - 50%)';dot.style.setProperty('--cx',cx);dot.style.setProperty('--cy',cy);ring.style.setProperty('--cx',cx);ring.style.setProperty('--cy',cy);
-    if(!started){rx=mx;ry=my;started=true;}
-  });
-  
-  
-  document.addEventListener('mouseover',e=>{
-    const el=e.target.closest('a,button,[role="button"],.category-card,.widget-tab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit');
-    document.body.classList.toggle('hovering',!!el);
-  });
-  document.addEventListener('mouseout',e=>{
-    if(!e.relatedTarget||!e.relatedTarget.closest('a,button,[role="button"],.category-card,.widget-tab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit')){
-      document.body.classList.remove('hovering');
+if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouchstart' in window)){
+  var dot=document.getElementById('cursor-dot');
+  var ring=document.getElementById('cursor-ring');
+  if(dot&&ring){
+    var mouseX=0,mouseY=0,ringX=0,ringY=0;
+    document.addEventListener('mousemove',function(e){
+      mouseX=e.clientX;mouseY=e.clientY;
+      dot.style.setProperty('--cx',mouseX+'px');
+      dot.style.setProperty('--cy',mouseY+'px');
+    });
+    function animateRing(){
+      ringX+=(mouseX-ringX)*0.15;
+      ringY+=(mouseY-ringY)*0.15;
+      ring.style.setProperty('--cx',ringX+'px');
+      ring.style.setProperty('--cy',ringY+'px');
+      requestAnimationFrame(animateRing);
     }
-  });
+    animateRing();
+    var HOVER='a,button,[role="button"],[data-hover],.category-card,.widget-tab,.widget-subtab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit';
+    document.addEventListener('mouseover',function(e){
+      document.body.classList.toggle('hovering',!!e.target.closest(HOVER));
+    });
+    document.addEventListener('mouseout',function(e){
+      if(!e.relatedTarget||!e.relatedTarget.closest(HOVER)) document.body.classList.remove('hovering');
+    });
+  }
 }
 </script>
 <script>
