@@ -30,6 +30,12 @@ function daysUntil(dateStr: string): number {
   return Math.round((exp.getTime() - today.getTime()) / 86400000);
 }
 
+// Formatează YYYY-MM-DD în ZZ.LL.AAAA (format românesc)
+function fmtRo(dateStr: string): string {
+  const p = dateStr.split("-");
+  return p.length === 3 ? `${p[2]}.${p[1]}.${p[0]}` : dateStr;
+}
+
 function emailHtml(name: string, type: string, days: number, expiry: string, provider: string | null): string {
   const label = TYPE_LABEL[type] || "contractul";
   const url = COMPARE_URL[type] || "https://comparaacum.ro";
@@ -43,7 +49,7 @@ function emailHtml(name: string, type: string, days: number, expiry: string, pro
       <h1 style="font-size:20px;margin:0 0 12px;">Salut${name ? ", " + name : ""}!</h1>
       <p style="font-size:15px;line-height:1.6;color:#a0a0b8;margin:0 0 16px;">
         Îți reamintim că <strong style="color:#fff;">${label}${prov}</strong> expiră <strong style="color:#ffd740;">${when}</strong>
-        (${expiry}). E momentul perfect să compari ofertele și să economisești înainte de reînnoire.
+        (${fmtRo(expiry)}). E momentul perfect să compari ofertele și să economisești înainte de reînnoire.
       </p>
       <a href="${url}" style="display:inline-block;background:#00d4ff;color:#000;text-decoration:none;font-weight:800;padding:12px 24px;border-radius:8px;font-size:15px;">Compară ofertele acum →</a>
     </div>

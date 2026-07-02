@@ -177,6 +177,25 @@ var TYPE_META={
   internet:{i:"📡",l:"Internet",u:"results-internet-en.html"}, tv:{i:"📺",l:"TV",u:"results-tv-en.html"}
 };
 function showMsg(t,txt){var m=document.getElementById('msg');m.className='msg '+t;m.textContent=txt;setTimeout(function(){m.className='msg';},4000);}
+// Custom dialog (replaces native confirm/alert so the custom cursor doesn't freeze)
+function caDialog(message, okText, cancelText){
+  return new Promise(function(resolve){
+    var ov=document.createElement('div');
+    ov.style.cssText='position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:1rem;';
+    var btns='<button id="ca-ok" class="btn-primary">'+okText+'</button>';
+    if(cancelText) btns='<button id="ca-cancel" class="btn-ghost">'+cancelText+'</button>'+btns;
+    ov.innerHTML='<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:380px;width:100%;padding:1.5rem;box-shadow:var(--shadow);">'
+      +'<p style="font-size:.95rem;line-height:1.55;margin-bottom:1.25rem;color:var(--text-primary);">'+message+'</p>'
+      +'<div style="display:flex;gap:.6rem;justify-content:flex-end;flex-wrap:wrap;">'+btns+'</div></div>';
+    document.body.appendChild(ov);
+    var ok=ov.querySelector('#ca-ok'), cancel=ov.querySelector('#ca-cancel');
+    ok.addEventListener('click',function(){ov.remove();resolve(true);});
+    if(cancel) cancel.addEventListener('click',function(){ov.remove();resolve(false);});
+    ov.addEventListener('click',function(e){ if(e.target===ov && cancel){ov.remove();resolve(false);} });
+  });
+}
+function caConfirm(msg){return caDialog(msg,'Confirm','Cancel');}
+function caAlert(msg){return caDialog(msg,'OK',null);}
 function daysUntil(d){var t=new Date();t.setHours(0,0,0,0);var e=new Date(d+'T00:00:00');return Math.round((e-t)/86400000);}
 function fmtDate(d){return new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});}
 
@@ -247,10 +266,12 @@ function loadReminders(){
   });
 }
 function delReminder(id){
-  if(!confirm('Delete this reminder?'))return;
-  CLIENT.from('reminders').delete().eq('id',id).then(function(r){
-    if(r.error){showMsg('err','Delete error.');return;}
-    loadReminders();
+  caConfirm('Delete this reminder?').then(function(ok){
+    if(!ok) return;
+    CLIENT.from('reminders').delete().eq('id',id).then(function(r){
+      if(r.error){showMsg('err','Delete error.');return;}
+      loadReminders();
+    });
   });
 }
 function loadSearches(){
@@ -290,15 +311,16 @@ function exportData(){
   });
 }
 function deleteAccount(){
-  if(!confirm('Are you sure you want to permanently delete your account? All reminders and history will be erased irreversibly.'))return;
-  CLIENT.functions.invoke('delete-account').then(function(r){
-    if(r.error){
-      Promise.all([CLIENT.from('reminders').delete().eq('user_id',USER.id),CLIENT.from('searches').delete().eq('user_id',USER.id)])
-        .then(function(){alert('Your data has been deleted. For full account removal, please contact us.');CA.signOut();});
-      return;
-    }
-    alert('Your account has been deleted. Thank you for using ComparaAcum.ro.');
-    CA.signOut();
+  caConfirm('Are you sure you want to permanently delete your account? All reminders and history will be erased irreversibly.').then(function(ok){
+    if(!ok) return;
+    CLIENT.functions.invoke('delete-account').then(function(r){
+      if(r.error){
+        Promise.all([CLIENT.from('reminders').delete().eq('user_id',USER.id),CLIENT.from('searches').delete().eq('user_id',USER.id)])
+          .then(function(){caAlert('Your data has been deleted. For full account removal, please contact us.').then(function(){CA.signOut();});});
+        return;
+      }
+      caAlert('Your account has been deleted. Thank you for using ComparaAcum.ro.').then(function(){CA.signOut();});
+    });
   });
 }
 function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'✕':'☰';b.setAttribute('aria-expanded',o);}

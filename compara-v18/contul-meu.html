@@ -177,6 +177,25 @@ var TYPE_META={
   internet:{i:"📡",l:"Internet",u:"rezultate-internet.html"}, tv:{i:"📺",l:"Televiziune",u:"rezultate-tv.html"}
 };
 function showMsg(t,txt){var m=document.getElementById('msg');m.className='msg '+t;m.textContent=txt;setTimeout(function(){m.className='msg';},4000);}
+// Dialog propriu (înlocuiește confirm/alert native ca să nu înghețe cursorul personalizat)
+function caDialog(message, okText, cancelText){
+  return new Promise(function(resolve){
+    var ov=document.createElement('div');
+    ov.style.cssText='position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:1rem;';
+    var btns='<button id="ca-ok" class="btn-primary">'+okText+'</button>';
+    if(cancelText) btns='<button id="ca-cancel" class="btn-ghost">'+cancelText+'</button>'+btns;
+    ov.innerHTML='<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:380px;width:100%;padding:1.5rem;box-shadow:var(--shadow);">'
+      +'<p style="font-size:.95rem;line-height:1.55;margin-bottom:1.25rem;color:var(--text-primary);">'+message+'</p>'
+      +'<div style="display:flex;gap:.6rem;justify-content:flex-end;flex-wrap:wrap;">'+btns+'</div></div>';
+    document.body.appendChild(ov);
+    var ok=ov.querySelector('#ca-ok'), cancel=ov.querySelector('#ca-cancel');
+    ok.addEventListener('click',function(){ov.remove();resolve(true);});
+    if(cancel) cancel.addEventListener('click',function(){ov.remove();resolve(false);});
+    ov.addEventListener('click',function(e){ if(e.target===ov && cancel){ov.remove();resolve(false);} });
+  });
+}
+function caConfirm(msg){return caDialog(msg,'Confirmă','Anulează');}
+function caAlert(msg){return caDialog(msg,'OK',null);}
 function daysUntil(d){var t=new Date();t.setHours(0,0,0,0);var e=new Date(d+'T00:00:00');return Math.round((e-t)/86400000);}
 function fmtDate(d){return new Date(d).toLocaleDateString('ro-RO',{day:'numeric',month:'long',year:'numeric'});}
 
@@ -248,10 +267,12 @@ function loadReminders(){
   });
 }
 function delReminder(id){
-  if(!confirm('Ștergi acest memento?'))return;
-  CLIENT.from('reminders').delete().eq('id',id).then(function(r){
-    if(r.error){showMsg('err','Eroare la ștergere.');return;}
-    loadReminders();
+  caConfirm('Ștergi acest memento?').then(function(ok){
+    if(!ok) return;
+    CLIENT.from('reminders').delete().eq('id',id).then(function(r){
+      if(r.error){showMsg('err','Eroare la ștergere.');return;}
+      loadReminders();
+    });
   });
 }
 
@@ -295,16 +316,17 @@ function exportData(){
   });
 }
 function deleteAccount(){
-  if(!confirm('Sigur vrei să-ți ștergi contul definitiv? Toate mementourile și istoricul se vor șterge ireversibil.'))return;
-  CLIENT.functions.invoke('delete-account').then(function(r){
-    if(r.error){
-      // fallback: șterge datele (RLS) și deloghează
-      Promise.all([CLIENT.from('reminders').delete().eq('user_id',USER.id),CLIENT.from('searches').delete().eq('user_id',USER.id)])
-        .then(function(){alert('Datele tale au fost șterse. Pentru ștergerea completă a contului, te rugăm să ne contactezi.');CA.signOut();});
-      return;
-    }
-    alert('Contul tău a fost șters. Îți mulțumim că ai folosit ComparaAcum.ro.');
-    CA.signOut();
+  caConfirm('Sigur vrei să-ți ștergi contul definitiv? Toate mementourile și istoricul se vor șterge ireversibil.').then(function(ok){
+    if(!ok) return;
+    CLIENT.functions.invoke('delete-account').then(function(r){
+      if(r.error){
+        // fallback: șterge datele (RLS) și deloghează
+        Promise.all([CLIENT.from('reminders').delete().eq('user_id',USER.id),CLIENT.from('searches').delete().eq('user_id',USER.id)])
+          .then(function(){caAlert('Datele tale au fost șterse. Pentru ștergerea completă a contului, te rugăm să ne contactezi.').then(function(){CA.signOut();});});
+        return;
+      }
+      caAlert('Contul tău a fost șters. Îți mulțumim că ai folosit ComparaAcum.ro.').then(function(){CA.signOut();});
+    });
   });
 }
 function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'✕':'☰';b.setAttribute('aria-expanded',o);}
