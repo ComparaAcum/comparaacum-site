@@ -384,9 +384,9 @@ document.addEventListener('click',function(e){
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="#">Politică confidențialitate</a>
+        <a href="politica-confidentialitate.html">Politică confidențialitate</a>
         <a href="#">Termeni și condiții</a>
-        <a href="#">GDPR</a>
+        <a href="politica-confidentialitate.html">GDPR</a>
         <a href="#">Cookie policy</a>
       </div>
     </div>
@@ -412,15 +412,48 @@ function switchSubTab(formId, btn) {
   section.querySelectorAll('.widget-form').forEach(f => f.style.display = 'none');
   document.getElementById('form-' + formId).style.display = 'block';
 }
+function caCategory(){
+  var vf=null;
+  document.querySelectorAll('.widget-form').forEach(function(fm){
+    if(fm.id && fm.offsetParent!==null) vf=fm.id;
+  });
+  if(vf){
+    if(vf.indexOf('casco')!==-1)return'casco';
+    if(vf.indexOf('rca')!==-1)return'rca';
+    if(vf.indexOf('gaze')!==-1)return'gaze';
+    if(vf.indexOf('energie')!==-1)return'energie';
+    if(vf.indexOf('net-tv')!==-1)return'tv';
+    if(vf.indexOf('net-')!==-1)return'internet';
+  }
+  var t=(document.querySelector('.widget-tab.active')||{}).textContent||'';
+  if(t.indexOf('Cas')!==-1)return'casa';
+  if(t.indexOf('tate')!==-1)return'sanatate';
+  if(t.indexOf('Energie')!==-1)return'energie';
+  if(t.indexOf('Internet')!==-1)return'internet';
+  return'rca';
+}
+function caCollectParams(){
+  var params={};
+  document.querySelectorAll('.widget-form').forEach(function(fm){
+    if(fm.offsetParent===null) return;
+    fm.querySelectorAll('.form-group').forEach(function(g){
+      var lab=g.querySelector('label'), inp=g.querySelector('select,input');
+      if(lab&&inp&&inp.value) params[lab.textContent.trim()]=inp.value;
+    });
+  });
+  return params;
+}
 function showResults() {
-  var activeTab = document.querySelector('.widget-tab.active');
-  var tabText = activeTab ? activeTab.textContent : '';
-  var url = 'rezultate.html';
-  if (tabText.indexOf('Energie') !== -1) url = 'rezultate-energie.html';
-  else if (tabText.indexOf('Internet') !== -1) url = 'rezultate-internet.html';
-  else if (tabText.indexOf('Cas') !== -1) url = 'rezultate-casa.html';
-  else if (tabText.indexOf('n') !== -1 && tabText.indexOf('tate') !== -1) url = 'rezultate-sanatate.html';
-  window.location.href = url;
+  var cat=caCategory();
+  var params=caCollectParams();
+  var urlMap={rca:'rezultate.html',casco:'rezultate.html',casa:'rezultate-casa.html',sanatate:'rezultate-sanatate.html',energie:'rezultate-energie.html',gaze:'rezultate-gaze.html',internet:'rezultate-internet.html',tv:'rezultate-tv.html'};
+  var url=urlMap[cat]||'rezultate.html';
+  var go=function(){window.location.href=url;};
+  if(window.CA && CA.isConfigured()){
+    var done=false, fin=function(){if(!done){done=true;go();}};
+    setTimeout(fin,600);
+    CA.saveSearch(cat,params).then(fin).catch(fin);
+  } else { go(); }
 }
 function setLang(lang, btn) {
   if(lang === 'en') { window.location.href = 'en/index-en.html'; return; }
@@ -485,8 +518,11 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouch
 })();
 </script>
 <script>
-function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'\u2715':'\u2630';b.setAttribute('aria-expanded',o);}
-document.addEventListener('click',function(e){var l=document.querySelector('.navbar-links'),t=document.querySelector('.navbar-toggle');if(l&&l.classList.contains('open')&&!e.target.closest('.navbar-links')&&!e.target.closest('.navbar-toggle')){l.classList.remove('open');if(t){t.innerHTML='\u2630';t.setAttribute('aria-expanded','false');}}});
+function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'✕':'☰';b.setAttribute('aria-expanded',o);}
+document.addEventListener('click',function(e){var l=document.querySelector('.navbar-links'),t=document.querySelector('.navbar-toggle');if(l&&l.classList.contains('open')&&!e.target.closest('.navbar-links')&&!e.target.closest('.navbar-toggle')){l.classList.remove('open');if(t){t.innerHTML='☰';t.setAttribute('aria-expanded','false');}}});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>

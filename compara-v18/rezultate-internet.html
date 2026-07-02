@@ -348,5 +348,8 @@ function brunoFilter(){var s=document.querySelectorAll("select"),f=false,i;for(i
 function brunoReset(){var s=document.querySelectorAll("select"),i;for(i=0;i<s.length;i++)s[i].selectedIndex=0;brunoFilter();}
 document.addEventListener("DOMContentLoaded",function(){var s=document.querySelectorAll("select"),i;for(i=0;i<s.length;i++)s[i].addEventListener("change",brunoFilter);});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>

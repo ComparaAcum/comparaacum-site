@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contul meu | ComparaAcum.ro</title>
+<meta name="robots" content="noindex"/>
+<link rel="stylesheet" href="css/main.css?v=41"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RN97LTXFW4');</script>
+<link rel="manifest" href="/manifest.json"/>
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+<meta name="theme-color" content="#0a0a0f"/>
+<style>
+.dash{max-width:1000px;margin:6.5rem auto 4rem;padding:0 1.25rem;}
+.dash-hero{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;}
+.dash-hero img{width:56px;height:56px;}
+.dash-hero h1{font-size:1.7rem;font-weight:800;}
+.dash-hero p{color:var(--text-secondary);font-size:.9rem;margin-top:.2rem;}
+.panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:1.75rem;}
+.panel h2{font-size:1.2rem;font-weight:800;margin-bottom:.35rem;display:flex;align-items:center;gap:.5rem;}
+.panel .sub{color:var(--text-secondary);font-size:.85rem;margin-bottom:1.25rem;line-height:1.5;}
+.rem-form{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem;}
+.rem-form .full{grid-column:1/-1;}
+.rem-form label{display:block;font-size:.75rem;font-weight:600;color:var(--text-secondary);margin-bottom:.3rem;}
+.rem-form input,.rem-form select{width:100%;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.65rem .8rem;border-radius:8px;font-size:.9rem;font-family:var(--font);}
+.rem-form input:focus,.rem-form select:focus{outline:none;border-color:var(--accent);}
+.notify-row{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--text-secondary);}
+.notify-row label{display:flex;align-items:center;gap:.35rem;font-weight:500;margin:0;}
+.btn-primary{background:var(--accent);color:#000;border:none;padding:.75rem 1.4rem;border-radius:8px;font-weight:800;font-size:.92rem;cursor:pointer;transition:var(--transition);}
+.btn-primary:hover{background:#fff;}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text-secondary);padding:.5rem .9rem;border-radius:8px;font-size:.82rem;cursor:pointer;transition:var(--transition);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+.rem-item{display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;margin-bottom:.75rem;flex-wrap:wrap;}
+.rem-icon{font-size:1.6rem;flex-shrink:0;}
+.rem-info{flex:1;min-width:160px;}
+.rem-info .t{font-weight:700;font-size:.95rem;}
+.rem-info .m{font-size:.8rem;color:var(--text-muted);margin-top:.15rem;}
+.rem-badge{font-size:.78rem;font-weight:700;padding:.35rem .7rem;border-radius:6px;white-space:nowrap;}
+.b-ok{background:rgba(0,230,118,.12);color:#5be59b;}
+.b-soon{background:rgba(255,215,64,.12);color:var(--warning);}
+.b-urgent{background:rgba(255,94,125,.12);color:#ff8da3;}
+.b-exp{background:rgba(255,94,125,.2);color:#ff8da3;}
+.search-item{display:flex;align-items:center;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.search-item:last-child{border-bottom:none;}
+.search-item .si-cat{font-weight:700;font-size:.9rem;}
+.search-item .si-params{font-size:.8rem;color:var(--text-muted);}
+.search-item .si-date{margin-left:auto;font-size:.78rem;color:var(--text-muted);}
+.empty{text-align:center;color:var(--text-muted);font-size:.88rem;padding:1.5rem 0;}
+.msg{padding:.7rem 1rem;border-radius:8px;font-size:.85rem;margin-bottom:1rem;display:none;}
+.msg.ok{display:block;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.35);color:#5be59b;}
+.msg.err{display:block;background:rgba(255,94,125,.1);border:1px solid rgba(255,94,125,.35);color:#ff8da3;}
+.danger{border-color:rgba(255,94,125,.3);}
+.danger h2{color:#ff8da3;}
+@media(max-width:560px){.rem-form{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<style>@media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none!important}}</style>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
+  <div class="navbar-links">
+    <a href="rezultate.html">Asigurări</a>
+    <a href="rezultate-energie.html">Energie</a>
+    <a href="rezultate-internet.html">Internet &amp; TV</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html" class="navbar-cta">Compară gratuit</a>
+  </div>
+  <button class="navbar-toggle" aria-label="Meniu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+</nav>
+
+<div class="dash" id="dash" style="display:none">
+  <div class="dash-hero">
+    <img src="images/bruno-head.png" alt="Bruno"/>
+    <div>
+      <h1 id="greet">Contul meu</h1>
+      <p id="greet-sub">Gestionează-ți mementourile și istoricul căutărilor.</p>
+    </div>
+  </div>
+
+  <div class="msg" id="msg"></div>
+
+  <!-- MEMENTOURI / CONTRACTE -->
+  <div class="panel">
+    <h2>🔔 Mementouri de expirare</h2>
+    <p class="sub">Adaugă-ți contractele (RCA, energie, internet etc.) și data la care expiră. Îți trimitem un email înainte să expire ca să ai timp să compari din nou.</p>
+
+    <form id="rem-form" onsubmit="return addReminder(event)">
+      <div class="rem-form">
+        <div>
+          <label>Tip contract</label>
+          <select id="r-type" required>
+            <option value="rca">🚗 RCA Auto</option>
+            <option value="casco">🔒 Casco</option>
+            <option value="casa">🏠 Asigurare Casă</option>
+            <option value="sanatate">❤️ Asigurare Sănătate</option>
+            <option value="energie">⚡ Energie electrică</option>
+            <option value="gaze">🔥 Gaze naturale</option>
+            <option value="internet">📡 Internet</option>
+            <option value="tv">📺 Televiziune</option>
+          </select>
+        </div>
+        <div>
+          <label>Furnizor (opțional)</label>
+          <input type="text" id="r-provider" placeholder="ex: Allianz, Enel, Digi"/>
+        </div>
+        <div>
+          <label>Număr poliță/contract (opțional)</label>
+          <input type="text" id="r-policy" placeholder="ex: RO-12345"/>
+        </div>
+        <div>
+          <label>Data expirării</label>
+          <input type="date" id="r-expiry" required/>
+        </div>
+        <div class="full">
+          <label>Anunță-mă cu:</label>
+          <div class="notify-row">
+            <label><input type="checkbox" id="r-n30" checked/> 30 de zile înainte</label>
+            <label><input type="checkbox" id="r-n7" checked/> 7 zile înainte</label>
+            <label><input type="checkbox" id="r-n1" checked/> 1 zi înainte</label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary" id="rem-btn">+ Adaugă memento</button>
+    </form>
+
+    <div id="rem-list" style="margin-top:1.5rem;"></div>
+  </div>
+
+  <!-- ISTORIC CAUTARI -->
+  <div class="panel">
+    <h2>🕑 Istoricul căutărilor</h2>
+    <p class="sub">Aici apar comparațiile pe care le-ai făcut cât timp ai fost autentificat.</p>
+    <div id="search-list"></div>
+  </div>
+
+  <!-- PREFERINTE & GDPR -->
+  <div class="panel danger">
+    <h2>⚙️ Cont & confidențialitate</h2>
+    <p class="sub">Contul tău: <strong id="acct-email"></strong></p>
+    <label class="notify-row" style="margin-bottom:1rem;">
+      <input type="checkbox" id="pref-marketing" onchange="saveMarketing()"/> &nbsp;Vreau să primesc ocazional sfaturi și oferte pe email
+    </label>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+      <button class="btn-ghost" onclick="exportData()">⬇️ Descarcă-mi datele</button>
+      <button class="btn-ghost" onclick="CA.signOut()">🚪 Ieși din cont</button>
+      <button class="btn-ghost danger" style="color:#ff8da3;border-color:rgba(255,94,125,.4)" onclick="deleteAccount()">🗑️ Șterge-mi contul definitiv</button>
+    </div>
+  </div>
+</div>
+
+<div id="loading" style="text-align:center;margin:9rem auto;color:var(--text-muted);">Se încarcă…</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 ComparaAcum.ro — Toate drepturile rezervate</p>
+      <div class="footer-legal"><a href="/politica-confidentialitate.html">Confidențialitate</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
+<script>
+var USER=null, CLIENT=null;
+var TYPE_META={
+  rca:{i:"🚗",l:"RCA Auto",u:"rezultate.html"}, casco:{i:"🔒",l:"Casco",u:"rezultate.html"},
+  casa:{i:"🏠",l:"Asigurare Casă",u:"rezultate-casa.html"}, sanatate:{i:"❤️",l:"Asigurare Sănătate",u:"rezultate-sanatate.html"},
+  energie:{i:"⚡",l:"Energie electrică",u:"rezultate-energie.html"}, gaze:{i:"🔥",l:"Gaze naturale",u:"rezultate-gaze.html"},
+  internet:{i:"📡",l:"Internet",u:"rezultate-internet.html"}, tv:{i:"📺",l:"Televiziune",u:"rezultate-tv.html"}
+};
+function showMsg(t,txt){var m=document.getElementById('msg');m.className='msg '+t;m.textContent=txt;setTimeout(function(){m.className='msg';},4000);}
+function daysUntil(d){var t=new Date();t.setHours(0,0,0,0);var e=new Date(d+'T00:00:00');return Math.round((e-t)/86400000);}
+function fmtDate(d){return new Date(d).toLocaleDateString('ro-RO',{day:'numeric',month:'long',year:'numeric'});}
+
+document.addEventListener('DOMContentLoaded',function(){
+  if(!window.CA || !CA.isConfigured()){
+    document.getElementById('loading').innerHTML='Conturile nu sunt încă configurate.<br>Completează cheile în <strong>js/supabase-config.js</strong> (vezi ghidul de instalare).';
+    return;
+  }
+  CLIENT=CA.client();
+  CA.requireAuth().then(function(u){
+    if(!u) return;
+    USER=u;
+    var name=(u.user_metadata&&u.user_metadata.full_name)||u.email;
+    document.getElementById('greet').textContent='Salut, '+(name.split(' ')[0]||'')+'!';
+    document.getElementById('acct-email').textContent=u.email;
+    document.getElementById('pref-marketing').checked=!!(u.user_metadata&&u.user_metadata.marketing_consent);
+    document.getElementById('loading').style.display='none';
+    document.getElementById('dash').style.display='block';
+    loadReminders(); loadSearches();
+  });
+});
+
+// ── Mementouri ──
+function addReminder(e){
+  e.preventDefault();
+  var btn=document.getElementById('rem-btn');btn.disabled=true;
+  CLIENT.from('reminders').insert({
+    user_id:USER.id,
+    type:document.getElementById('r-type').value,
+    provider:document.getElementById('r-provider').value.trim()||null,
+    policy_number:document.getElementById('r-policy').value.trim()||null,
+    expiry_date:document.getElementById('r-expiry').value,
+    notify_30:document.getElementById('r-n30').checked,
+    notify_7:document.getElementById('r-n7').checked,
+    notify_1:document.getElementById('r-n1').checked
+  }).then(function(r){
+    btn.disabled=false;
+    if(r.error){showMsg('err','Nu am putut salva mementoul: '+r.error.message);return;}
+    document.getElementById('rem-form').reset();
+    document.getElementById('r-n30').checked=document.getElementById('r-n7').checked=document.getElementById('r-n1').checked=true;
+    showMsg('ok','Memento adăugat! Te anunțăm pe email înainte de expirare.');
+    loadReminders();
+  });
+  return false;
+}
+function loadReminders(){
+  CLIENT.from('reminders').select('*').order('expiry_date',{ascending:true}).then(function(r){
+    var list=document.getElementById('rem-list');
+    if(r.error){list.innerHTML='<div class="empty">Eroare la încărcare.</div>';return;}
+    var rows=r.data||[];
+    if(!rows.length){list.innerHTML='<div class="empty">Niciun memento încă. Adaugă primul contract mai sus 👆</div>';return;}
+    list.innerHTML=rows.map(function(x){
+      var m=TYPE_META[x.type]||{i:"📄",l:x.type};
+      var d=daysUntil(x.expiry_date),badge,cls;
+      if(d<0){cls='b-exp';badge='Expirat';}
+      else if(d===0){cls='b-urgent';badge='Expiră azi';}
+      else if(d<=7){cls='b-urgent';badge='Expiră în '+d+' zile';}
+      else if(d<=30){cls='b-soon';badge='În '+d+' zile';}
+      else{cls='b-ok';badge='În '+d+' zile';}
+      var sub=[x.provider,x.policy_number].filter(Boolean).join(' · ');
+      return '<div class="rem-item">'+
+        '<div class="rem-icon">'+m.i+'</div>'+
+        '<div class="rem-info"><div class="t">'+m.l+'</div><div class="m">'+(sub?sub+' · ':'')+'expiră '+fmtDate(x.expiry_date)+'</div></div>'+
+        '<span class="rem-badge '+cls+'">'+badge+'</span>'+
+        '<a class="btn-ghost" href="'+(m.u||'index.html')+'">Compară din nou</a>'+
+        '<button class="btn-ghost" onclick="delReminder(\''+x.id+'\')">Șterge</button>'+
+      '</div>';
+    }).join('');
+  });
+}
+function delReminder(id){
+  if(!confirm('Ștergi acest memento?'))return;
+  CLIENT.from('reminders').delete().eq('id',id).then(function(r){
+    if(r.error){showMsg('err','Eroare la ștergere.');return;}
+    loadReminders();
+  });
+}
+
+// ── Istoric cautari ──
+function loadSearches(){
+  CLIENT.from('searches').select('*').order('created_at',{ascending:false}).limit(50).then(function(r){
+    var list=document.getElementById('search-list');
+    if(r.error){list.innerHTML='<div class="empty">Eroare la încărcare.</div>';return;}
+    var rows=r.data||[];
+    if(!rows.length){list.innerHTML='<div class="empty">Nicio căutare salvată încă. Fă o comparație pe site și va apărea aici.</div>';return;}
+    list.innerHTML=rows.map(function(x){
+      var m=TYPE_META[x.category]||{i:"🔎",l:x.category,u:"index.html"};
+      var p=x.params||{};
+      var parts=Object.keys(p).map(function(k){return p[k];}).filter(Boolean).join(' · ');
+      return '<div class="search-item">'+
+        '<span style="font-size:1.2rem">'+m.i+'</span>'+
+        '<div><div class="si-cat">'+m.l+'</div>'+(parts?'<div class="si-params">'+parts+'</div>':'')+'</div>'+
+        '<span class="si-date">'+fmtDate(x.created_at)+'</span>'+
+        '<a class="btn-ghost" href="'+(m.u||'index.html')+'">Compară din nou</a>'+
+      '</div>';
+    }).join('');
+  });
+}
+
+// ── Preferinte & GDPR ──
+function saveMarketing(){
+  var v=document.getElementById('pref-marketing').checked;
+  CLIENT.auth.updateUser({data:{marketing_consent:v}}).then(function(){
+    CLIENT.from('profiles').update({marketing_consent:v}).eq('id',USER.id);
+    showMsg('ok','Preferință salvată.');
+  });
+}
+function exportData(){
+  Promise.all([
+    CLIENT.from('reminders').select('*'),
+    CLIENT.from('searches').select('*')
+  ]).then(function(res){
+    var data={cont:{email:USER.email,nume:(USER.user_metadata||{}).full_name||''},mementouri:res[0].data||[],cautari:res[1].data||[]};
+    var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='datele-mele-comparaacum.json';a.click();
+  });
+}
+function deleteAccount(){
+  if(!confirm('Sigur vrei să-ți ștergi contul definitiv? Toate mementourile și istoricul se vor șterge ireversibil.'))return;
+  CLIENT.functions.invoke('delete-account').then(function(r){
+    if(r.error){
+      // fallback: șterge datele (RLS) și deloghează
+      Promise.all([CLIENT.from('reminders').delete().eq('user_id',USER.id),CLIENT.from('searches').delete().eq('user_id',USER.id)])
+        .then(function(){alert('Datele tale au fost șterse. Pentru ștergerea completă a contului, te rugăm să ne contactezi.');CA.signOut();});
+      return;
+    }
+    alert('Contul tău a fost șters. Îți mulțumim că ai folosit ComparaAcum.ro.');
+    CA.signOut();
+  });
+}
+function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'✕':'☰';b.setAttribute('aria-expanded',o);}
+</script>
+</body>
+</html>
