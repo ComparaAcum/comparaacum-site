@@ -83,14 +83,17 @@ Deno.serve(async (_req) => {
     let sent = 0;
     for (const r of reminders ?? []) {
       const days = daysUntil(r.expiry_date);
-      // Găsește pragul care se potrivește exact azi și e activat
-      const win = WINDOWS.find((w) =>
-        days === w &&
+      if (days < 0) continue;
+      // Praguri activate care au fost deja atinse (au mai rămas <= w zile)
+      const eligible = WINDOWS.filter((w) =>
+        days <= w &&
         ((w === 30 && r.notify_30) || (w === 7 && r.notify_7) || (w === 1 && r.notify_1))
       );
-      if (win === undefined) continue;
-      // Anti-duplicat: nu retrimite același prag
-      if (r.last_notified_window === win) continue;
+      if (eligible.length === 0) continue;
+      // Cel mai urgent prag atins (cel mai mic)
+      const win = Math.min(...eligible);
+      // Anti-duplicat: trimite doar dacă e un prag mai urgent decât ultimul notificat
+      if (r.last_notified_window != null && win >= r.last_notified_window) continue;
 
       // Emailul utilizatorului
       const { data: u } = await supabase.auth.admin.getUserById(r.user_id);

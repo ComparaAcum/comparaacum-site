@@ -152,6 +152,7 @@ function showMode(mode){
 function friendlyError(e){
   var m=(e&&e.message)||'';
   if(m.indexOf('Invalid login')!==-1) return 'Email sau parolă greșite.';
+  if(m.indexOf('Email not confirmed')!==-1) return 'Trebuie să-ți confirmi adresa de email întâi. Verifică inbox-ul (și folderul Spam).';
   if(m.indexOf('already registered')!==-1||m.indexOf('already been registered')!==-1) return 'Există deja un cont cu acest email. Încearcă să intri în cont.';
   if(m.indexOf('not-configured')!==-1) return 'Conturile nu sunt încă configurate (vezi ghidul de instalare).';
   if(m.indexOf('Password should be')!==-1) return 'Parola trebuie să aibă cel puțin 8 caractere.';

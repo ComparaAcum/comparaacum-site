@@ -144,6 +144,7 @@ function showMode(mode){
 function friendlyError(e){
   var m=(e&&e.message)||'';
   if(m.indexOf('Invalid login')!==-1) return 'Wrong email or password.';
+  if(m.indexOf('Email not confirmed')!==-1) return 'Please confirm your email address first. Check your inbox (and Spam folder).';
   if(m.indexOf('already registered')!==-1||m.indexOf('already been registered')!==-1) return 'An account with this email already exists. Try signing in.';
   if(m.indexOf('not-configured')!==-1) return 'Accounts are not configured yet (see the setup guide).';
   if(m.indexOf('Password should be')!==-1) return 'Password must be at least 8 characters.';
