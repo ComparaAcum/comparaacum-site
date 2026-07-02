@@ -181,7 +181,7 @@ function showMsg(t,txt){var m=document.getElementById('msg');m.className='msg '+
 function caDialog(message, okText, cancelText){
   return new Promise(function(resolve){
     var ov=document.createElement('div');
-    ov.style.cssText='position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:1rem;';
+    ov.style.cssText='position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:1rem;';
     var btns='<button id="ca-ok" class="btn-primary">'+okText+'</button>';
     if(cancelText) btns='<button id="ca-cancel" class="btn-ghost">'+cancelText+'</button>'+btns;
     ov.innerHTML='<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:380px;width:100%;padding:1.5rem;box-shadow:var(--shadow);">'
