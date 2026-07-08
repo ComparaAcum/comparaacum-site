@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ComparaAcum.ro — Compare Insurance, Energy & Internet in Romania</title>
 <meta name="description" content="Compare RCA insurance, home insurance, electricity, gas and internet providers for free. Find the best deal in 2 minutes."/>
-<link rel="canonical" href="https://comparaacum.ro/"/>
+<link rel="canonical" href="https://comparaacum.ro/en/index-en"/>
+<link rel="alternate" hreflang="ro" href="https://comparaacum.ro/"/>
+<link rel="alternate" hreflang="en" href="https://comparaacum.ro/en/index-en"/>
+<link rel="alternate" hreflang="x-default" href="https://comparaacum.ro/"/>
 <link rel="stylesheet" href="../css/main.css?v=41"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
@@ -34,14 +37,7 @@
 .dropdown-menu a:hover { color: var(--accent) !important; background: var(--accent-glow); }
 .nav-dropdown:hover .dropdown-menu { display: block; }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RN97LTXFW4');
-</script>
+<script src="../js/cookie-consent.js"></script>
 <script>
 function navDrop(el){
   var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
@@ -238,14 +234,14 @@ document.addEventListener('click',function(e){
     <div class="stat-item"><div class="stat-value">Free</div><div class="stat-label">For all users</div></div>
     <div class="stat-item"><div class="stat-value">2 min</div><div class="stat-label">Average comparison time</div></div>
     <div class="stat-item"><div class="stat-value">Impartial</div><div class="stat-label">Independent from providers</div></div>
-    <div class="stat-item"><div class="stat-value">48+</div><div class="stat-label">Providers monitored</div></div>
+    <div class="stat-item"><div class="stat-value">48+</div><div class="stat-label">Providers targeted at launch</div></div>
   </div>
 </div>
 
 <!-- FURNIZORI -->
 <div class="providers">
   <div class="providers-inner">
-    <div class="providers-label">We compare offers from Romania's top providers</div>
+    <div class="providers-label">Top Romanian providers we’ll compare at launch</div>
     <div class="providers-logos">
       <span class="provider-pill">Allianz</span>
       <span class="provider-pill">Groupama</span>
@@ -270,11 +266,11 @@ document.addEventListener('click',function(e){
     <h2 class="section-title">All categories in one place</h2>
     <p class="section-subtitle">From mandatory insurance to energy and internet providers — we compare everything you need.</p>
     <div class="categories-grid">
-      <a href="results-rca-en.html" class="category-card"><div class="category-icon">🚗</div><div class="category-name">Car Insurance</div><div class="category-count">18 providers</div></a>
+      <a href="results-rca-en.html" class="category-card"><div class="category-icon">🚗</div><div class="category-name">Car Insurance</div><div class="category-count">✅ Official ASF data</div></a>
       <a href="results-home-en.html" class="category-card"><div class="category-icon">🏠</div><div class="category-name">Home Insurance</div><div class="category-count">12 providers</div></a>
-      <a href="results-energy-en.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Electricity</div><div class="category-count">8 providers</div></a>
-      <a href="results-gas-en.html" class="category-card"><div class="category-icon">🔥</div><div class="category-name">Natural Gas</div><div class="category-count">6 providers</div></a>
-      <a href="results-internet-en.html" class="category-card"><div class="category-icon">📡</div><div class="category-name">Internet</div><div class="category-count">10 providers</div></a>
+      <a href="results-energy-en.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Electricity</div><div class="category-count">✅ Real offers</div></a>
+      <a href="results-gas-en.html" class="category-card"><div class="category-icon">🔥</div><div class="category-name">Natural Gas</div><div class="category-count">✅ Real data</div></a>
+      <a href="results-internet-en.html" class="category-card"><div class="category-icon">📡</div><div class="category-name">Internet</div><div class="category-count">✅ Real offers</div></a>
       <a href="results-health-en.html" class="category-card"><div class="category-icon">❤️</div><div class="category-name">Health Insurance</div><div class="category-count">9 providers</div></a>
     </div>
   </div>
@@ -289,7 +285,7 @@ document.addEventListener('click',function(e){
       <div class="step-card"><div class="step-num">1</div><div class="step-title">Enter your details</div><div class="step-desc">A few basic details — takes under 2 minutes.</div></div>
       <div class="step-card"><div class="step-num">2</div><div class="step-title">Compare the offers</div><div class="step-desc">We show offers from all providers, sorted by price and rating.</div></div>
       <div class="step-card"><div class="step-num">3</div><div class="step-title">Choose the best one</div><div class="step-desc">Select the right offer and complete directly with the provider.</div></div>
-      <div class="step-card"><div class="step-num">4</div><div class="step-title">You save</div><div class="step-desc">Our users save an average of 1,200 RON per year. Always free.</div></div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-title">You save</div><div class="step-desc">You can save up to 1,200 RON per year. Always free.</div></div>
     </div>
   </div>
 </section>
@@ -297,46 +293,44 @@ document.addEventListener('click',function(e){
 <!-- TESTIMONIALE -->
 <section>
   <div class="section-inner">
-    <div class="section-label">Customer reviews</div>
-    <h2 class="section-title">What our users say</h2>
+    <div class="section-label">Savings scenarios</div>
+    <h2 class="section-title">How much you could save</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#0a84ff">MD</div>
+          <div class="testimonial-avatar" style="background:#0a84ff">🚗</div>
           <div class="testimonial-meta">
-            <div class="testimonial-author">Mihai D.</div>
+            <div class="testimonial-author">Driver, age 36</div>
             <div class="testimonial-location">Cluj-Napoca</div>
           </div>
         </div>
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-saving">Savings: 380 RON/year on car insurance</div>
-        <p class="testimonial-text">"I found a car insurance policy 380 RON cheaper than my old one. All done in 3 minutes, no phone calls."</p>
+        <div class="testimonial-saving">Potential savings: ~380 RON/year on car insurance</div>
+        <p class="testimonial-text">The price of the same MTPL policy can vary by hundreds of RON between insurers. Comparing shows you the difference instantly.</p>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#e0457b">AM</div>
+          <div class="testimonial-avatar" style="background:#e0457b">⚡</div>
           <div class="testimonial-meta">
-            <div class="testimonial-author">Andreea M.</div>
+            <div class="testimonial-author">2-room apartment</div>
             <div class="testimonial-location">Bucharest</div>
           </div>
         </div>
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-saving">Savings: 540 RON/year on energy</div>
-        <p class="testimonial-text">"I switched energy provider and now pay 45 RON less per month. I didn't know it was this simple."</p>
+        <div class="testimonial-saving">Potential savings: ~540 RON/year on energy</div>
+        <p class="testimonial-text">The gap between the cheapest and most expensive energy offer can exceed 45 RON per month at typical usage.</p>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#00b894">BT</div>
+          <div class="testimonial-avatar" style="background:#00b894">📡</div>
           <div class="testimonial-meta">
-            <div class="testimonial-author">Bogdan T.</div>
+            <div class="testimonial-author">Fibre internet plan</div>
             <div class="testimonial-location">Bacău</div>
           </div>
         </div>
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-saving">Savings: 280 RON/year on internet</div>
-        <p class="testimonial-text">"Faster speed, lower price. Found an internet provider 280 RON cheaper per year. Highly recommend!"</p>
+        <div class="testimonial-saving">Potential savings: ~280 RON/year on internet</div>
+        <p class="testimonial-text">For the same speed, internet plans differ significantly between providers. Worth comparing before you renew.</p>
       </div>
     </div>
+    <p style="text-align:center;color:var(--text-secondary);font-size:.8rem;margin-top:1.5rem;">Illustrative scenarios based on real market price differences. Verified user savings will be published after launch.</p>
   </div>
 </section>
 
@@ -384,15 +378,15 @@ document.addEventListener('click',function(e){
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="#">Privacy policy</a>
-        <a href="#">Terms and conditions</a>
-        <a href="#">GDPR</a>
-        <a href="#">Cookie policy</a>
+        <a href="privacy-policy-en.html">Privacy policy</a>
+        <a href="terms-en.html">Terms and conditions</a>
+        <a href="privacy-policy-en.html">GDPR</a>
+        <a href="cookie-policy-en.html">Cookie policy</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 ComparaAcum.ro — All rights reserved</p>
-      <div class="footer-legal"><a href="#">Cookie policy</a><a href="#">ANPC</a><a href="#">SOL</a></div>
+      <div class="footer-legal"><a href="cookie-policy-en.html">Cookie policy</a><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL (EU ODR)</a></div>
     </div>
   </div>
 </footer>

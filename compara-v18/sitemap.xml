@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://comparaacum.ro/</loc><priority>1.0</priority></url>
-  <url><loc>https://comparaacum.ro/rezultate.html</loc><priority>0.9</priority></url>
-  <url><loc>https://comparaacum.ro/blog.html</loc><priority>0.8</priority></url>
-  <url><loc>https://comparaacum.ro/despre.html</loc><priority>0.7</priority></url>
-  <url><loc>https://comparaacum.ro/contact.html</loc><priority>0.7</priority></url>
-  <url><loc>https://comparaacum.ro/blog/rca-2026.html</loc><priority>0.8</priority></url>
-  <url><loc>https://comparaacum.ro/blog/energie-2026.html</loc><priority>0.8</priority></url>
-  <url><loc>https://comparaacum.ro/blog/internet-2026.html</loc><priority>0.8</priority></url>
+  <url><loc>https://comparaacum.ro/en/index-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/rezultate</loc><priority>0.9</priority></url>
+  <url><loc>https://comparaacum.ro/en/results-rca-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/rezultate-casa</loc><priority>0.9</priority></url>
+  <url><loc>https://comparaacum.ro/en/results-home-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/rezultate-sanatate</loc><priority>0.9</priority></url>
+  <url><loc>https://comparaacum.ro/en/results-health-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/rezultate-energie</loc><priority>0.9</priority></url>
+  <url><loc>https://comparaacum.ro/en/results-energy-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/rezultate-gaze</loc><priority>0.9</priority></url>
+  <url><loc>https://comparaacum.ro/en/results-gas-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/rezultate-internet</loc><priority>0.9</priority></url>
+  <url><loc>https://comparaacum.ro/en/results-internet-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/rezultate-tv</loc><priority>0.9</priority></url>
+  <url><loc>https://comparaacum.ro/en/results-tv-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/despre</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/about-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/contact</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/contact-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/blog</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/blog-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/devino-partener</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/partner-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/politica-confidentialitate</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/privacy-policy-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/termeni-conditii</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/terms-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/politica-cookies</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/cookie-policy-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/blog/rca-2026</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/blog/rca-2026-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/blog/energie-2026</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/blog/energie-2026-en</loc><priority>0.6</priority></url>
+  <url><loc>https://comparaacum.ro/blog/internet-2026</loc><priority>0.7</priority></url>
+  <url><loc>https://comparaacum.ro/en/blog/internet-2026-en</loc><priority>0.6</priority></url>
 </urlset>

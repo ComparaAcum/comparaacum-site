@@ -6,6 +6,9 @@
 <title>ComparaAcum.ro — Compară asigurări, energie și internet în România</title>
 <meta name="description" content="Compară gratuit asigurări RCA, asigurări casă, furnizori energie electrică, gaze și internet. Găsește cea mai bună ofertă în 2 minute și economisești până la 1.200 RON pe an."/>
 <link rel="canonical" href="https://comparaacum.ro/"/>
+<link rel="alternate" hreflang="ro" href="https://comparaacum.ro/"/>
+<link rel="alternate" hreflang="en" href="https://comparaacum.ro/en/index-en"/>
+<link rel="alternate" hreflang="x-default" href="https://comparaacum.ro/"/>
 <link rel="stylesheet" href="css/main.css?v=41"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
@@ -34,14 +37,7 @@
 .dropdown-menu a:hover { color: var(--accent) !important; background: var(--accent-glow); }
 .nav-dropdown:hover .dropdown-menu { display: block; }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RN97LTXFW4');
-</script>
+<script src="js/cookie-consent.js"></script>
 <script>
 function navDrop(el){
   var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
@@ -238,14 +234,14 @@ document.addEventListener('click',function(e){
     <div class="stat-item"><div class="stat-value">Gratuit</div><div class="stat-label">Pentru toți utilizatorii</div></div>
     <div class="stat-item"><div class="stat-value">2 min</div><div class="stat-label">Timp mediu comparare</div></div>
     <div class="stat-item"><div class="stat-value">Imparțial</div><div class="stat-label">Independent de furnizori</div></div>
-    <div class="stat-item"><div class="stat-value">48+</div><div class="stat-label">Furnizori monitorizați</div></div>
+    <div class="stat-item"><div class="stat-value">48+</div><div class="stat-label">Furnizori vizați la lansare</div></div>
   </div>
 </div>
 
 <!-- FURNIZORI -->
 <div class="providers">
   <div class="providers-inner">
-    <div class="providers-label">Comparăm oferte de la furnizori de top din România</div>
+    <div class="providers-label">Furnizori de top din România pe care îi vom compara la lansare</div>
     <div class="providers-logos">
       <span class="provider-pill">Allianz</span>
       <span class="provider-pill">Groupama</span>
@@ -270,11 +266,11 @@ document.addEventListener('click',function(e){
     <h2 class="section-title">Toate categoriile într-un singur loc</h2>
     <p class="section-subtitle">De la asigurări obligatorii la furnizori de energie și internet — comparăm tot ce ai nevoie.</p>
     <div class="categories-grid">
-      <a href="rezultate.html" class="category-card"><div class="category-icon">🚗</div><div class="category-name">RCA Auto</div><div class="category-count">18 furnizori</div></a>
+      <a href="rezultate.html" class="category-card"><div class="category-icon">🚗</div><div class="category-name">RCA Auto</div><div class="category-count">✅ Date oficiale ASF</div></a>
       <a href="rezultate-casa.html" class="category-card"><div class="category-icon">🏠</div><div class="category-name">Asigurare Casă</div><div class="category-count">12 furnizori</div></a>
-      <a href="rezultate-energie.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Energie Electrică</div><div class="category-count">8 furnizori</div></a>
-      <a href="rezultate-gaze.html" class="category-card"><div class="category-icon">🔥</div><div class="category-name">Gaze Naturale</div><div class="category-count">6 furnizori</div></a>
-      <a href="rezultate-internet.html" class="category-card"><div class="category-icon">📡</div><div class="category-name">Internet</div><div class="category-count">10 furnizori</div></a>
+      <a href="rezultate-energie.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Energie Electrică</div><div class="category-count">✅ Oferte reale</div></a>
+      <a href="rezultate-gaze.html" class="category-card"><div class="category-icon">🔥</div><div class="category-name">Gaze Naturale</div><div class="category-count">✅ Date reale</div></a>
+      <a href="rezultate-internet.html" class="category-card"><div class="category-icon">📡</div><div class="category-name">Internet</div><div class="category-count">✅ Oferte reale</div></a>
       <a href="rezultate-sanatate.html" class="category-card"><div class="category-icon">❤️</div><div class="category-name">Asigurare Sănătate</div><div class="category-count">9 furnizori</div></a>
     </div>
   </div>
@@ -289,7 +285,7 @@ document.addEventListener('click',function(e){
       <div class="step-card"><div class="step-num">1</div><div class="step-title">Completezi datele</div><div class="step-desc">Câteva informații de bază — durează sub 2 minute.</div></div>
       <div class="step-card"><div class="step-num">2</div><div class="step-title">Compari ofertele</div><div class="step-desc">Afișăm ofertele de la toți furnizorii, ordonate după preț și rating.</div></div>
       <div class="step-card"><div class="step-num">3</div><div class="step-title">Alegi cea mai bună</div><div class="step-desc">Selectezi oferta potrivită și finalizezi direct cu furnizorul.</div></div>
-      <div class="step-card"><div class="step-num">4</div><div class="step-title">Economisești</div><div class="step-desc">Clienții noștri economisesc în medie 1.200 RON pe an. Gratuit, mereu.</div></div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-title">Economisești</div><div class="step-desc">Poți economisi până la 1.200 RON pe an. Gratuit, mereu.</div></div>
     </div>
   </div>
 </section>
@@ -297,46 +293,44 @@ document.addEventListener('click',function(e){
 <!-- TESTIMONIALE -->
 <section>
   <div class="section-inner">
-    <div class="section-label">Recenzii clienți</div>
-    <h2 class="section-title">Ce spun utilizatorii noștri</h2>
+    <div class="section-label">Scenarii de economii</div>
+    <h2 class="section-title">Cât ai putea economisi</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#0a84ff">MD</div>
+          <div class="testimonial-avatar" style="background:#0a84ff">🚗</div>
           <div class="testimonial-meta">
-            <div class="testimonial-author">Mihai D.</div>
+            <div class="testimonial-author">Șofer, 36 ani</div>
             <div class="testimonial-location">Cluj-Napoca</div>
           </div>
         </div>
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-saving">Economie: 380 RON/an la RCA</div>
-        <p class="testimonial-text">"Am găsit o poliță RCA cu 380 RON mai ieftină decât cea pe care o aveam. Totul în 3 minute, fără telefoane."</p>
+        <div class="testimonial-saving">Economie posibilă: ~380 RON/an la RCA</div>
+        <p class="testimonial-text">Prețul aceleiași polițe RCA poate varia cu sute de lei între asigurători. Compararea îți arată instant diferența.</p>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#e0457b">AM</div>
+          <div class="testimonial-avatar" style="background:#e0457b">⚡</div>
           <div class="testimonial-meta">
-            <div class="testimonial-author">Andreea M.</div>
+            <div class="testimonial-author">Apartament 2 camere</div>
             <div class="testimonial-location">București</div>
           </div>
         </div>
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-saving">Economie: 540 RON/an la energie</div>
-        <p class="testimonial-text">"Am schimbat furnizorul de energie și acum plătesc cu 45 RON mai puțin pe lună. Nu știam că e atât de simplu."</p>
+        <div class="testimonial-saving">Economie posibilă: ~540 RON/an la energie</div>
+        <p class="testimonial-text">Diferența dintre cea mai scumpă și cea mai ieftină ofertă de energie poate depăși 45 RON pe lună la un consum obișnuit.</p>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#00b894">BT</div>
+          <div class="testimonial-avatar" style="background:#00b894">📡</div>
           <div class="testimonial-meta">
-            <div class="testimonial-author">Bogdan T.</div>
+            <div class="testimonial-author">Abonament internet fibră</div>
             <div class="testimonial-location">Bacău</div>
           </div>
         </div>
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-saving">Economie: 280 RON/an la internet</div>
-        <p class="testimonial-text">"Viteză mai mare, preț mai mic. Am găsit un furnizor de internet cu 280 RON mai ieftin pe an. Recomand!"</p>
+        <div class="testimonial-saving">Economie posibilă: ~280 RON/an la internet</div>
+        <p class="testimonial-text">Pentru aceeași viteză, abonamentele de internet diferă semnificativ între furnizori. Merită să compari înainte să prelungești.</p>
       </div>
     </div>
+    <p style="text-align:center;color:var(--text-secondary);font-size:.8rem;margin-top:1.5rem;">Scenarii ilustrative, bazate pe diferențele de preț din piață. Vom publica economii verificate ale utilizatorilor după lansare.</p>
   </div>
 </section>
 
@@ -385,14 +379,14 @@ document.addEventListener('click',function(e){
       <div class="footer-col">
         <h4>Legal</h4>
         <a href="politica-confidentialitate.html">Politică confidențialitate</a>
-        <a href="#">Termeni și condiții</a>
+        <a href="termeni-conditii.html">Termeni și condiții</a>
         <a href="politica-confidentialitate.html">GDPR</a>
-        <a href="#">Cookie policy</a>
+        <a href="politica-cookies.html">Politică cookies</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 ComparaAcum.ro — Toate drepturile rezervate</p>
-      <div class="footer-legal"><a href="#">Politică cookies</a><a href="#">ANPC</a><a href="#">SOL</a></div>
+      <div class="footer-legal"><a href="politica-cookies.html">Politică cookies</a><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL (UE)</a></div>
     </div>
   </div>
 </footer>

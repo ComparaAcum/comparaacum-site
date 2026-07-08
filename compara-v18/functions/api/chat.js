@@ -48,7 +48,7 @@ export async function onRequestPost(context) {
 
     const messages = [{ role: "system", content: SYSTEM_PROMPT }, ...msgs];
 
-    const out = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+    const out = await env.AI.run("@cf/meta/llama-3.2-3b-instruct", {
       messages,
       max_tokens: 400,
       temperature: 0.3,

@@ -4,16 +4,14 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Compară furnizori energie electrică 2026 — ComparaAcum.ro</title>
+<meta name="description" content="Compară furnizorii de energie electrică din România și găsește un preț mai bun pe kWh. Gratuit și rapid."/>
+<link rel="canonical" href="https://comparaacum.ro/rezultate-energie"/>
+<link rel="alternate" hreflang="ro" href="https://comparaacum.ro/rezultate-energie"/>
+<link rel="alternate" hreflang="en" href="https://comparaacum.ro/en/results-energy-en"/>
+<link rel="alternate" hreflang="x-default" href="https://comparaacum.ro/rezultate-energie"/>
 <link rel="stylesheet" href="css/main.css?v=41"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RN97LTXFW4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RN97LTXFW4');
-</script>
+<script src="js/cookie-consent.js"></script>
 <script>
 function navDrop(el){
   var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
@@ -86,167 +84,48 @@ document.addEventListener('click',function(e){
   <div class="section-label">⚡ Energie Electrică</div>
 <div style="max-width:1100px;margin:1rem auto 0;padding:0 2rem;">
   <div style="background:rgba(255,215,64,.08);border:1px solid rgba(255,215,64,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:.75rem;align-items:flex-start;">
-    <span style="font-size:1.2rem;flex-shrink:0;">ℹ️</span>
+    <span style="font-size:1.2rem;flex-shrink:0;">✅</span>
     <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;">
-      <strong style="color:var(--warning);">Platformă în faza de lansare.</strong> Datele afișate mai jos sunt demonstrative. Lucrăm la integrarea ofertelor reale de la furnizori — lasă-ne emailul tău și te anunțăm când platforma e complet funcțională!
+      <strong style="color:var(--success);">Oferte reale.</strong> Prețurile de mai jos sunt preluate din <a href="https://posf.ro/comparator?comparatorType=electric" target="_blank" rel="noopener" style="color:var(--accent);">comparatorul oficial ANRE (POSF)</a> și din ofertele publicate de furnizori — actualizate la <strong>1 iulie 2026</strong>. Prețul final depinde de zona ta de distribuție; confirmă întotdeauna pe site-ul furnizorului.
     </p>
   </div>
 </div>
   <h1>Compară furnizori de energie electrică</h1>
-  <p>8 furnizori disponibili · Economisești până la 540 RON/an</p>
+  <p>10 oferte reale · Prețuri finale cu TVA · Actualizat: 1 iulie 2026</p>
 </div>
 
 <div style="max-width:1100px;margin:2rem auto;padding:0 2rem;">
-  <!-- Filtru rapid -->
+  <!-- Filtre -->
   <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-    <span style="font-size:.85rem;color:var(--text-secondary);font-weight:600;">Filtreaza:</span>
-    <select style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
-      <option>Casnic</option><option>Business</option>
+    <span style="font-size:.85rem;color:var(--text-secondary);font-weight:600;">Calculează pentru:</span>
+    <select id="energy-consum" onchange="CAEnergy.render()" style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
+      <option value="150">Consum 150 kWh/lună (apartament mic)</option>
+      <option value="250" selected>Consum 250 kWh/lună (apartament mediu)</option>
+      <option value="350">Consum 350 kWh/lună (apartament mare)</option>
+      <option value="500">Consum 500 kWh/lună (casă)</option>
     </select>
-    <select style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
-      <option>Consum 200 kWh/lună</option><option>Consum 300 kWh/lună</option><option>Consum 400 kWh/lună</option>
+    <select id="energy-zona" onchange="CAEnergy.render()" style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
+      <option value="muntenia" selected>Zona Muntenia (București, Ilfov...)</option>
+      <option value="oltenia">Zona Oltenia</option>
+      <option value="transilvania">Zona Transilvania</option>
+      <option value="moldova">Zona Moldova</option>
     </select>
-    <select style="background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.5rem .75rem;border-radius:8px;font-size:.85rem;">
-      <option>Toate județele</option><option>București</option><option>Cluj</option><option>Bacău</option>
-    </select>
-    <span style="margin-left:auto;font-size:.85rem;color:var(--text-muted);">8 oferte găsite</span>
+    <span style="margin-left:auto;font-size:.85rem;color:var(--text-muted);"><span id="energy-count">10</span> oferte reale</span>
   </div>
 
   <div class="bruno-bar">
   <img src="images/bruno-head.png" alt="Bruno"/>
-  <p>Salut, sunt <strong>Bruno</strong>! Ți-am găsit <strong>8 oferte</strong> — alege ce ți se potrivește.</p>
+  <p>Salut, sunt <strong>Bruno</strong>! Astea sunt <strong>oferte reale</strong>, sortate după prețul final — alege ce ți se potrivește.</p>
 </div>
-  <div class="bruno-empty" style="display:none">
-  <img src="images/bruno-head.png" alt="Bruno"/>
-  <h3>Bruno n-a găsit oferte pentru filtrele astea</h3>
-  <p>Încearcă să schimbi sau să resetezi filtrele — sigur găsim ceva potrivit.</p>
-  <button class="bruno-reset" onclick="brunoReset()">Resetează filtrele</button>
-</div>
-  <div class="results-list">
-
-    <!-- Oferta 1 -->
-    <div class="result-card">
-      <div class="result-card-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">⚡</span>
-            <div class="result-provider">Furnizor Energie A</div>
-            <span class="saving-badge">Cel mai popular</span>
-          </div>
-          <div class="result-rating">★★★★★ <span style="color:var(--text-muted)">4.7 (3.241 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 12 luni · Preț fix garantat</div>
-        </div>
-        <div class="result-price">
-          <div class="result-price-main">0.68 RON</div>
-          <div class="result-price-period">/ kWh</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~136 RON/lună</div>
-          <div class="saving-badge" style="margin-top:6px;">-18% față de medie</div>
-        </div>
-      </div>
-      <div class="result-features">
-        <span class="feature-badge">✓ Preț fix 12 luni</span>
-        <span class="feature-badge">✓ Factură online</span>
-        <span class="feature-badge">✓ Plată card</span>
-        <span class="feature-badge">✓ Fără penalități ieșire</span>
-      </div>
-      <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
-        <span class="saving-badge">Economisești 540 RON/an</span>
-      </div>
-    </div>
-
-    <!-- Oferta 2 -->
-    <div class="result-card">
-      <div class="result-card-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🌱</span>
-            <div class="result-provider">Furnizor Energie B</div>
-            <span style="background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.2);color:var(--success);font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;">Verde 100%</span>
-          </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.5 (2.108 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 24 luni · Energie din surse regenerabile</div>
-        </div>
-        <div class="result-price">
-          <div class="result-price-main">0.71 RON</div>
-          <div class="result-price-period">/ kWh</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~142 RON/lună</div>
-        </div>
-      </div>
-      <div class="result-features">
-        <span class="feature-badge">✓ Energie verde</span>
-        <span class="feature-badge">✓ App mobilă</span>
-        <span class="feature-badge">✓ Contorizare smart</span>
-      </div>
-      <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
-        <span class="saving-badge">Economisești 468 RON/an</span>
-      </div>
-    </div>
-
-    <!-- Oferta 3 -->
-    <div class="result-card">
-      <div class="result-card-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">⚡</span>
-            <div class="result-provider">Furnizor Energie C</div>
-          </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.3 (1.456 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 12 luni · Energie hidroelectrică</div>
-        </div>
-        <div class="result-price">
-          <div class="result-price-main">0.73 RON</div>
-          <div class="result-price-period">/ kWh</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~146 RON/lună</div>
-        </div>
-      </div>
-      <div class="result-features">
-        <span class="feature-badge">✓ Energie hidro</span>
-        <span class="feature-badge">✓ Factură online</span>
-        <span class="feature-badge">✓ Preț fix</span>
-      </div>
-      <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
-        <span class="saving-badge">Economisești 420 RON/an</span>
-      </div>
-    </div>
-
-    <!-- Oferta 4 -->
-    <div class="result-card">
-      <div class="result-card-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;">
-            <span style="font-size:1.5rem;">🔋</span>
-            <div class="result-provider">Furnizor Energie D</div>
-          </div>
-          <div class="result-rating">★★★★☆ <span style="color:var(--text-muted)">4.2 (987 recenzii)</span></div>
-          <div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">Contract: 12 luni · Plată online</div>
-        </div>
-        <div class="result-price">
-          <div class="result-price-main">0.75 RON</div>
-          <div class="result-price-period">/ kWh</div>
-          <div style="font-size:.85rem;color:var(--text-secondary);margin-top:4px;">~150 RON/lună</div>
-        </div>
-      </div>
-      <div class="result-features">
-        <span class="feature-badge">✓ Plată online</span>
-        <span class="feature-badge">✓ Suport 24/7</span>
-      </div>
-      <div class="result-actions">
-        <button class="btn-select" onclick="document.getElementById('notify-form').scrollIntoView({behavior:'smooth'})">🔔 Anunță-mă la lansare</button>
-      </div>
-    </div>
-
-  </div>
-  <p style="text-align:center;color:var(--text-muted);font-size:.8rem;margin-top:2rem;">⚠️ Ofertele sunt demonstrative. Prețurile reale vor fi disponibile după semnarea parteneriatelor.</p>
+  <div class="results-list" id="energy-results"></div>
+  <p style="text-align:center;color:var(--text-muted);font-size:.8rem;margin-top:2rem;line-height:1.7;">Surse: <a href="https://posf.ro/comparator?comparatorType=electric" target="_blank" rel="noopener" style="color:var(--accent);">Comparatorul oficial ANRE (POSF)</a> și paginile de oferte ale furnizorilor · prețuri finale cu TVA, verificate la 1 iulie 2026.<br/>ComparaAcum.ro nu are în prezent parteneriate comerciale cu furnizorii listați — linkurile duc direct la ofertele acestora, iar afișarea este imparțială, sortată după preț.</p>
 </div>
 
 <section id="notify-form" style="padding:3rem 2rem;">
   <div style="max-width:600px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border-accent);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;box-shadow:var(--shadow-accent);">
     <div style="font-size:2.5rem;margin-bottom:1rem;">🔔</div>
-    <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.75rem;">Fii primul care compară oferte reale</h2>
-    <p style="color:var(--text-secondary);font-size:.95rem;margin-bottom:1.5rem;line-height:1.7;">Platforma se lansează în curând cu oferte reale de la furnizori. Lasă-ne emailul și te anunțăm imediat ce e gata — fără spam, promitem!</p>
+    <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.75rem;">Primește alerte când apar oferte mai bune</h2>
+    <p style="color:var(--text-secondary);font-size:.95rem;margin-bottom:1.5rem;line-height:1.7;">Ofertele de energie se schimbă lunar. Lasă-ne emailul și te anunțăm când apare un preț mai mic decât cele de azi — fără spam, promitem!</p>
     <form action="https://formspree.io/f/xkoavoap" method="POST" style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;">
       <input type="email" name="email" placeholder="emailul tău" required style="flex:1;min-width:220px;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);padding:.85rem 1.1rem;border-radius:8px;font-size:.95rem;font-family:var(--font);"/>
       <button type="submit" class="btn-primary" style="white-space:nowrap;">Anunță-mă →</button>
@@ -280,15 +159,15 @@ document.addEventListener('click',function(e){
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="#">Politică confidențialitate</a>
-        <a href="#">Termeni și condiții</a>
-        <a href="#">GDPR</a>
-        <a href="#">Cookie policy</a>
+        <a href="politica-confidentialitate.html">Politică confidențialitate</a>
+        <a href="termeni-conditii.html">Termeni și condiții</a>
+        <a href="politica-confidentialitate.html">GDPR</a>
+        <a href="politica-cookies.html">Politică cookies</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 ComparaAcum.ro — Toate drepturile rezervate</p>
-      <div class="footer-legal"><a href="#">Politică cookies</a><a href="#">ANPC</a><a href="#">SOL</a></div>
+      <div class="footer-legal"><a href="politica-cookies.html">Politică cookies</a><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC</a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL (UE)</a></div>
     </div>
   </div>
 </footer>
@@ -353,14 +232,10 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouch
 function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'\u2715':'\u2630';b.setAttribute('aria-expanded',o);}
 document.addEventListener('click',function(e){var l=document.querySelector('.navbar-links'),t=document.querySelector('.navbar-toggle');if(l&&l.classList.contains('open')&&!e.target.closest('.navbar-links')&&!e.target.closest('.navbar-toggle')){l.classList.remove('open');if(t){t.innerHTML='\u2630';t.setAttribute('aria-expanded','false');}}});
 </script>
-<script>
-function brunoFilter(){var s=document.querySelectorAll("select"),f=false,i;for(i=0;i<s.length;i++){if(s[i].selectedIndex>0)f=true;}var L=document.querySelector(".results-list"),B=document.querySelector(".bruno-bar"),E=document.querySelector(".bruno-empty");if(L)L.style.display=f?"none":"";if(B)B.style.display=f?"none":"";if(E)E.style.display=f?"block":"none";}
-function brunoReset(){var s=document.querySelectorAll("select"),i;for(i=0;i<s.length;i++)s[i].selectedIndex=0;brunoFilter();}
-document.addEventListener("DOMContentLoaded",function(){var s=document.querySelectorAll("select"),i;for(i=0;i<s.length;i++)s[i].addEventListener("change",brunoFilter);});
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/energy-offers.js"></script>
 <script src="js/bruno-chat.js"></script>
 </body>
 </html>
