@@ -6,7 +6,6 @@
   var DATA_DATE = '1 iulie 2026';
   var DATA_DATE_EN = '1 July 2026';
 
-  // preț final lei/kWh (TVA inclus), zona Muntenia; hidro are prețuri pe zone
   var OFFERS = [
     {provider:'Hidroelectrica', offer:'Viitor Hidro', price:1.06,
      zones:{muntenia:1.06, oltenia:1.09, transilvania:1.11, moldova:1.14},
@@ -126,7 +125,32 @@
     if(cnt) cnt.textContent = priced.length;
   }
 
+  // preselecție din parametrii URL (trimiși de widgetul de pe homepage)
+  function norm(s){return s.toLowerCase().replace(/[ăâ]/g,'a').replace(/[î]/g,'i').replace(/ș/g,'s').replace(/ț/g,'t').replace(/-/g,' ').trim();}
+  var ZONE_MAP={};
+  ['bucuresti','bucharest','ilfov','giurgiu','prahova','dambovita','buzau','braila','galati','vrancea','constanta','calarasi','ialomita','tulcea'].forEach(function(j){ZONE_MAP[j]='muntenia';});
+  ['dolj','gorj','mehedinti','olt','valcea','arges','teleorman'].forEach(function(j){ZONE_MAP[j]='oltenia';});
+  ['bacau','botosani','iasi','neamt','suceava','vaslui'].forEach(function(j){ZONE_MAP[j]='moldova';});
+  // restul județelor (Transilvania + Banat) → 'transilvania'
+  function applyUrl(){
+    try{
+      var q={}; new URLSearchParams(typeof location!=='undefined'?location.search:'').forEach(function(v,k){q[k]=v;});
+      if(q.judet){
+        var z=ZONE_MAP[norm(q.judet)]||'transilvania';
+        var el=document.getElementById('energy-zona'); if(el) el.value=z;
+      }
+      if(q.consum){
+        var c=parseInt(q.consum,10);
+        if(c>0){
+          var best=[150,250,350,500].reduce(function(a,b){return Math.abs(b-c)<Math.abs(a-c)?b:a;});
+          var el2=document.getElementById('energy-consum'); if(el2) el2.value=String(best);
+        }
+      }
+    }catch(e){}
+  }
+  function boot(){applyUrl();render();}
+
   window.CAEnergy = {render:render, DATA_DATE:DATA_DATE, DATA_DATE_EN:DATA_DATE_EN, count:OFFERS.length};
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', render);
-  else render();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();

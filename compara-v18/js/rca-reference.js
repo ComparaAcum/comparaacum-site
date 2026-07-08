@@ -27,6 +27,21 @@
     {name:'Omniasig VIG', url:'https://www.omniasig.ro/'}
   ];
 
+  // preselecție din parametrii URL (trimiși de widgetul de pe homepage)
+  var INIT=(function(){
+    var zone=null, age=null;
+    try{
+      var q={}; new URLSearchParams(typeof location!=='undefined'?location.search:'').forEach(function(v,k){q[k]=v;});
+      if(q.judet){ var j=q.judet.toLowerCase(); zone=(j.indexOf('bucure')===0||j==='bucharest'||j==='ilfov')?'bif':'rest'; }
+      if(q.varsta){
+        var m=q.varsta.match(/^(\d+)/), n=m?parseInt(m[1],10):0;
+        if(/peste|over/i.test(q.varsta)||n>50) age=4;
+        else if(n>=41) age=3; else if(n>=31) age=2; else if(n>=26) age=1; else if(n>=18) age=0;
+      }
+    }catch(e){}
+    return {zone:zone, age:age};
+  })();
+
   function render(){
     var box=document.getElementById('rca-app');
     if(!box) return;
@@ -56,7 +71,9 @@
     };
 
     var zEl=document.getElementById('rca-zona'), aEl=document.getElementById('rca-varsta'), kEl=document.getElementById('rca-kw');
-    var zone=zEl?zEl.value:'rest', age=aEl?parseInt(aEl.value,10):2, kw=kEl?parseInt(kEl.value,10):2;
+    var zone=zEl?zEl.value:(INIT.zone||'rest');
+    var age=aEl?parseInt(aEl.value,10):(INIT.age!=null?INIT.age:2);
+    var kw=kEl?parseInt(kEl.value,10):2;
     var tarif=(zone==='bif'?BIF:REST)[kw][age];
     var prag=Math.round(tarif*FACTOR_N);
 

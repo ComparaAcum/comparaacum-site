@@ -3,7 +3,7 @@
  * efectiv, prețul final cu TVA nu depășește 0,31 lei/kWh. Ofertele competitive: ~0,28–0,30 lei/kWh.
  * Surse: ANRE/POSF, Monitorul Oficial (OUG 12/2026), paginile furnizorilor. Verificat: iulie 2026. */
 (function(){
-  var CAP = 0.31;      // plafon efectiv OUG 12/2026, lei/kWh cu TVA
+  var CAP = 0.31;
   var COMPETITIVE = 0.28;
 
   var OFFERS = [
@@ -25,6 +25,17 @@
 
   function fmt(n){ return n.toFixed(2).replace('.', ','); }
 
+  var INIT_CONS=(function(){
+    try{
+      var q={}; new URLSearchParams(typeof location!=='undefined'?location.search:'').forEach(function(v,k){q[k]=v;});
+      if(q.consum){
+        var kwh=Math.round(parseInt(q.consum,10)*10.55);
+        if(kwh>0) return [300,600,1000,1500].reduce(function(a,b){return Math.abs(b-kwh)<Math.abs(a-kwh)?b:a;});
+      }
+    }catch(e){}
+    return 600;
+  })();
+
   function render(){
     var box=document.getElementById('gas-app');
     if(!box) return;
@@ -45,7 +56,7 @@
       perKwh:'/ kWh (cu TVA)'
     };
     var consEl=document.getElementById('gas-consum');
-    var cons=consEl?parseInt(consEl.value,10):600;
+    var cons=consEl?parseInt(consEl.value,10):INIT_CONS;
 
     var html='';
     html+='<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">'+
@@ -66,7 +77,7 @@
         ? '<div class="result-price-main">'+t.capLbl+'</div><div class="result-price-period">'+t.perKwh+'</div>'
         : '<div class="result-price-main">≈'+fmt(o.price)+' RON</div><div class="result-price-period">'+t.perKwh+'</div>';
       var badge=o.badge?('<span class="saving-badge">'+(isEN?o.badgeEn:o.badge)+'</span>'):'';
-      var note=o.capped?(isEN?t.capNote:t.capNote):(isEN?o.noteEn:o.note);
+      var note=o.capped?t.capNote:(isEN?o.noteEn:o.note);
       html+='<div class="result-card"><div class="result-card-top"><div>'+
         '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;"><span style="font-size:1.5rem;">🔥</span><div class="result-provider">'+o.provider+'</div>'+badge+'</div>'+
         '<div style="font-size:.9rem;color:var(--text-primary);font-weight:600;">'+o.offer+'</div>'+
