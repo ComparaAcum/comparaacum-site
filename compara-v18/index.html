@@ -4,12 +4,21 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ComparaAcum.ro — Compară asigurări, energie și internet în România</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+<meta property="og:title" content="ComparaAcum.ro — Compară asigurări, energie și internet în România"/>
+<meta property="og:description" content="Compară gratuit asigurări RCA, asigurări casă, furnizori energie electrică, gaze și internet. Găsește cea mai bună ofertă în 2 minute și economisești până la 1.200 RON pe an."/>
+<meta property="og:image" content="https://comparaacum.ro/images/og-image.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://comparaacum.ro/"/>
+<meta property="og:locale" content="ro_RO"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="description" content="Compară gratuit asigurări RCA, asigurări casă, furnizori energie electrică, gaze și internet. Găsește cea mai bună ofertă în 2 minute și economisești până la 1.200 RON pe an."/>
 <link rel="canonical" href="https://comparaacum.ro/"/>
 <link rel="alternate" hreflang="ro" href="https://comparaacum.ro/"/>
 <link rel="alternate" hreflang="en" href="https://comparaacum.ro/en/index-en"/>
 <link rel="alternate" hreflang="x-default" href="https://comparaacum.ro/"/>
-<link rel="stylesheet" href="css/main.css?v=41"/>
+<link rel="stylesheet" href="css/main.css?v=42"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 /* Widget sub-tabs */
@@ -65,10 +74,6 @@ document.addEventListener('click',function(e){
 </head>
 <body>
 
-<!-- Custom cursor -->
-<style>@media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none!important}}</style>
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -77,24 +82,24 @@ document.addEventListener('click',function(e){
     <div class="nav-dropdown">
       <a href="rezultate.html" onclick="return navDrop(this)">Asigurări</a>
       <div class="dropdown-menu">
-        <a href="rezultate.html">🚗 RCA Auto</a>
-        <a href="rezultate-casa.html">🏠 Asigurare Casă</a>
-        <a href="rezultate-sanatate.html">❤️ Asigurare Sănătate</a>
+        <a href="rezultate.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg> RCA Auto</a>
+        <a href="rezultate-casa.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Asigurare Casă</a>
+        <a href="rezultate-sanatate.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg> Asigurare Sănătate</a>
       </div>
     </div>
     <div class="nav-dropdown">
       <a href="rezultate-energie.html" onclick="return navDrop(this)">Energie</a>
       <div class="dropdown-menu">
-        <a href="rezultate-energie.html">⚡ Energie Electrică</a>
-        <a href="rezultate-gaze.html">🔥 Gaze Naturale</a>
+        <a href="rezultate-energie.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Energie Electrică</a>
+        <a href="rezultate-gaze.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.2-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.5-2.3 1-3 0 1.4 1.1 2.5 2.5 2.5z"/></svg> Gaze Naturale</a>
       </div>
     </div>
     <div class="nav-dropdown">
       <a href="rezultate-internet.html" onclick="return navDrop(this)">Internet &amp; TV</a>
       <div class="dropdown-menu">
-        <a href="rezultate-internet.html">📡 Internet Fibră</a>
-        <a href="rezultate-tv.html">📺 Televiziune</a>
-        <a href="rezultate-internet.html">📦 Pachete Internet + TV</a>
+        <a href="rezultate-internet.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg> Internet Fibră</a>
+        <a href="rezultate-tv.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg> Televiziune</a>
+        <a href="rezultate-internet.html"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Pachete Internet + TV</a>
       </div>
     </div>
     <a href="blog.html">Blog</a>
@@ -130,32 +135,32 @@ document.addEventListener('click',function(e){
     <div class="compare-widget" style="margin-top:2.5rem;text-align:left;">
       <!-- Main tabs -->
       <div class="widget-tabs">
-        <button class="widget-tab active" onclick="switchTab('rca',this)">🚗 RCA Auto</button>
-        <button class="widget-tab" onclick="switchTab('casa',this)">🏠 Casă</button>
-        <button class="widget-tab" onclick="switchTab('energie',this)">⚡ Energie</button>
-        <button class="widget-tab" onclick="switchTab('internet',this)">📡 Internet &amp; TV</button>
-        <button class="widget-tab" onclick="switchTab('sanatate',this)">❤️ Sănătate</button>
+        <button class="widget-tab active" onclick="switchTab('rca',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg> RCA Auto</button>
+        <button class="widget-tab" onclick="switchTab('casa',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Casă</button>
+        <button class="widget-tab" onclick="switchTab('energie',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Energie</button>
+        <button class="widget-tab" onclick="switchTab('internet',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg> Internet &amp; TV</button>
+        <button class="widget-tab" onclick="switchTab('sanatate',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg> Sănătate</button>
       </div>
 
       <!-- RCA: sub-tabs RCA Obligatorie / Casco -->
       <div id="section-rca" class="widget-section">
         <div class="widget-subtabs">
-          <button class="widget-subtab active" onclick="switchSubTab('rca-obligatorie',this)">🛡️ RCA Obligatorie</button>
-          <button class="widget-subtab" onclick="switchSubTab('rca-casco',this)">🔒 Casco</button>
+          <button class="widget-subtab active" onclick="switchSubTab('rca-obligatorie',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RCA Obligatorie</button>
+          <button class="widget-subtab" onclick="switchSubTab('rca-casco',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Casco</button>
         </div>
         <div id="form-rca-obligatorie" class="widget-form">
           <div class="form-group"><label>Marca mașinii</label><select><option>Dacia</option><option>Alfa Romeo</option><option>Audi</option><option>BMW</option><option>Chevrolet</option><option>Citroën</option><option>Cupra</option><option>Fiat</option><option>Ford</option><option>Honda</option><option>Hyundai</option><option>Jaguar</option><option>Jeep</option><option>Kia</option><option>Land Rover</option><option>Lexus</option><option>Mazda</option><option>Mercedes-Benz</option><option>Mini</option><option>Mitsubishi</option><option>Nissan</option><option>Opel</option><option>Peugeot</option><option>Porsche</option><option>Renault</option><option>Seat</option><option>Skoda</option><option>Smart</option><option>Subaru</option><option>Suzuki</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option><option>Altă marcă</option></select></div>
           <div class="form-group"><label>Anul fabricației</label><select><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option><option>1996</option><option>1995</option><option>Mai vechi de 1995</option></select></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
           <div class="form-group"><label>Vârsta șoferului</label><select><option>18-25 ani</option><option>26-30 ani</option><option>31-40 ani</option><option>41-50 ani</option><option>peste 50 ani</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
         <div id="form-rca-casco" class="widget-form" style="display:none">
           <div class="form-group"><label>Marca mașinii</label><select><option>Dacia</option><option>Alfa Romeo</option><option>Audi</option><option>BMW</option><option>Chevrolet</option><option>Citroën</option><option>Cupra</option><option>Fiat</option><option>Ford</option><option>Honda</option><option>Hyundai</option><option>Jaguar</option><option>Jeep</option><option>Kia</option><option>Land Rover</option><option>Lexus</option><option>Mazda</option><option>Mercedes-Benz</option><option>Mini</option><option>Mitsubishi</option><option>Nissan</option><option>Opel</option><option>Peugeot</option><option>Porsche</option><option>Renault</option><option>Seat</option><option>Skoda</option><option>Smart</option><option>Subaru</option><option>Suzuki</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option><option>Altă marcă</option></select></div>
           <div class="form-group"><label>Anul fabricației</label><select><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option><option>1996</option><option>1995</option><option>Mai vechi de 1995</option></select></div>
           <div class="form-group"><label>Valoare vehicul (RON)</label><input type="number" placeholder="ex: 50000"/></div>
           <div class="form-group"><label>Franciză</label><select><option>Fără franciză</option><option>500 RON</option><option>1000 RON</option><option>2000 RON</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
       </div>
 
@@ -165,52 +170,52 @@ document.addEventListener('click',function(e){
           <div class="form-group"><label>Tip locuință</label><select><option>Apartament</option><option>Casă</option><option>Vilă</option></select></div>
           <div class="form-group"><label>Suprafață (mp)</label><input type="number" placeholder="ex: 75"/></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
       </div>
 
       <!-- Energie: sub-tabs Curent / Gaze -->
       <div id="section-energie" class="widget-section" style="display:none">
         <div class="widget-subtabs">
-          <button class="widget-subtab active" onclick="switchSubTab('energie-curent',this)">⚡ Curent Electric</button>
-          <button class="widget-subtab" onclick="switchSubTab('energie-gaze',this)">🔥 Gaze Naturale</button>
+          <button class="widget-subtab active" onclick="switchSubTab('energie-curent',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Curent Electric</button>
+          <button class="widget-subtab" onclick="switchSubTab('energie-gaze',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.2-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.5-2.3 1-3 0 1.4 1.1 2.5 2.5 2.5z"/></svg> Gaze Naturale</button>
         </div>
         <div id="form-energie-curent" class="widget-form">
           <div class="form-group"><label>Tip contract</label><select><option>Casnic</option><option>Business</option></select></div>
           <div class="form-group"><label>Consum lunar (kWh)</label><input type="number" placeholder="ex: 200"/></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
         <div id="form-energie-gaze" class="widget-form" style="display:none">
           <div class="form-group"><label>Tip contract</label><select><option>Casnic</option><option>Business</option></select></div>
           <div class="form-group"><label>Consum lunar (mc)</label><input type="number" placeholder="ex: 50"/></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
       </div>
 
       <!-- Internet & TV: sub-tabs -->
       <div id="section-internet" class="widget-section" style="display:none">
         <div class="widget-subtabs">
-          <button class="widget-subtab active" onclick="switchSubTab('net-fibra',this)">📡 Internet Fibră</button>
-          <button class="widget-subtab" onclick="switchSubTab('net-tv',this)">📺 Televiziune</button>
-          <button class="widget-subtab" onclick="switchSubTab('net-pachet',this)">📦 Internet + TV</button>
+          <button class="widget-subtab active" onclick="switchSubTab('net-fibra',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg> Internet Fibră</button>
+          <button class="widget-subtab" onclick="switchSubTab('net-tv',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg> Televiziune</button>
+          <button class="widget-subtab" onclick="switchSubTab('net-pachet',this)"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Internet + TV</button>
         </div>
         <div id="form-net-fibra" class="widget-form">
           <div class="form-group"><label>Viteză dorită</label><select><option>100 Mbps</option><option>300 Mbps</option><option>500 Mbps</option><option>1 Gbps</option></select></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
         <div id="form-net-tv" class="widget-form" style="display:none">
           <div class="form-group"><label>Tip recepție</label><select><option>Cablu</option><option>Satelit</option><option>IPTV</option></select></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
         <div id="form-net-pachet" class="widget-form" style="display:none">
           <div class="form-group"><label>Viteză internet</label><select><option>100 Mbps</option><option>300 Mbps</option><option>1 Gbps</option></select></div>
           <div class="form-group"><label>Canale TV dorite</label><select><option>Pachet de bază</option><option>Sport inclus</option><option>Cinema inclus</option><option>Complet</option></select></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
       </div>
 
@@ -220,7 +225,7 @@ document.addEventListener('click',function(e){
           <div class="form-group"><label>Vârstă</label><input type="number" placeholder="ex: 35"/></div>
           <div class="form-group"><label>Tip asigurare</label><select><option>Individuală</option><option>Familie</option></select></div>
           <div class="form-group"><label>Județ</label><select><option>București</option><option>Alba</option><option>Arad</option><option>Argeș</option><option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option><option>Botoșani</option><option>Brașov</option><option>Brăila</option><option>Buzău</option><option>Caraș-Severin</option><option>Călărași</option><option>Cluj</option><option>Constanța</option><option>Covasna</option><option>Dâmbovița</option><option>Dolj</option><option>Galați</option><option>Giurgiu</option><option>Gorj</option><option>Harghita</option><option>Hunedoara</option><option>Ialomița</option><option>Iași</option><option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option><option>Mureș</option><option>Neamț</option><option>Olt</option><option>Prahova</option><option>Satu Mare</option><option>Sălaj</option><option>Sibiu</option><option>Suceava</option><option>Teleorman</option><option>Timiș</option><option>Tulcea</option><option>Vaslui</option><option>Vâlcea</option><option>Vrancea</option></select></div>
-          <button class="widget-submit" onclick="showResults()">🔍 Compară ofertele</button>
+          <button class="widget-submit" onclick="showResults()"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Compară ofertele</button>
         </div>
       </div>
     </div>
@@ -266,12 +271,12 @@ document.addEventListener('click',function(e){
     <h2 class="section-title">Toate categoriile într-un singur loc</h2>
     <p class="section-subtitle">De la asigurări obligatorii la furnizori de energie și internet — comparăm tot ce ai nevoie.</p>
     <div class="categories-grid">
-      <a href="rezultate.html" class="category-card"><div class="category-icon">🚗</div><div class="category-name">RCA Auto</div><div class="category-count">✅ Date oficiale ASF</div></a>
-      <a href="rezultate-casa.html" class="category-card"><div class="category-icon">🏠</div><div class="category-name">Asigurare Casă</div><div class="category-count">12 furnizori</div></a>
-      <a href="rezultate-energie.html" class="category-card"><div class="category-icon">⚡</div><div class="category-name">Energie Electrică</div><div class="category-count">✅ Oferte reale</div></a>
-      <a href="rezultate-gaze.html" class="category-card"><div class="category-icon">🔥</div><div class="category-name">Gaze Naturale</div><div class="category-count">✅ Date reale</div></a>
-      <a href="rezultate-internet.html" class="category-card"><div class="category-icon">📡</div><div class="category-name">Internet</div><div class="category-count">✅ Oferte reale</div></a>
-      <a href="rezultate-sanatate.html" class="category-card"><div class="category-icon">❤️</div><div class="category-name">Asigurare Sănătate</div><div class="category-count">9 furnizori</div></a>
+      <a href="rezultate.html" class="category-card"><div class="category-icon"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div><div class="category-name">RCA Auto</div><div class="category-count"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Date oficiale ASF</div></a>
+      <a href="rezultate-casa.html" class="category-card"><div class="category-icon"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="category-name">Asigurare Casă</div><div class="category-count">12 furnizori</div></a>
+      <a href="rezultate-energie.html" class="category-card"><div class="category-icon"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="category-name">Energie Electrică</div><div class="category-count"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Oferte reale</div></a>
+      <a href="rezultate-gaze.html" class="category-card"><div class="category-icon"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.2-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.5-2.3 1-3 0 1.4 1.1 2.5 2.5 2.5z"/></svg></div><div class="category-name">Gaze Naturale</div><div class="category-count"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Date reale</div></a>
+      <a href="rezultate-internet.html" class="category-card"><div class="category-icon"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></div><div class="category-name">Internet</div><div class="category-count"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Oferte reale</div></a>
+      <a href="rezultate-sanatate.html" class="category-card"><div class="category-icon"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div><div class="category-name">Asigurare Sănătate</div><div class="category-count">9 furnizori</div></a>
     </div>
   </div>
 </section>
@@ -298,7 +303,7 @@ document.addEventListener('click',function(e){
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#0a84ff">🚗</div>
+          <div class="testimonial-avatar" style="background:#0a84ff"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
           <div class="testimonial-meta">
             <div class="testimonial-author">Șofer, 36 ani</div>
             <div class="testimonial-location">Cluj-Napoca</div>
@@ -309,7 +314,7 @@ document.addEventListener('click',function(e){
       </div>
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#e0457b">⚡</div>
+          <div class="testimonial-avatar" style="background:#e0457b"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <div class="testimonial-meta">
             <div class="testimonial-author">Apartament 2 camere</div>
             <div class="testimonial-location">București</div>
@@ -320,7 +325,7 @@ document.addEventListener('click',function(e){
       </div>
       <div class="testimonial-card">
         <div class="testimonial-head">
-          <div class="testimonial-avatar" style="background:#00b894">📡</div>
+          <div class="testimonial-avatar" style="background:#00b894"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></div>
           <div class="testimonial-meta">
             <div class="testimonial-author">Abonament internet fibră</div>
             <div class="testimonial-location">Bacău</div>
@@ -340,7 +345,7 @@ document.addEventListener('click',function(e){
     <div class="cta-banner">
       <h2>Gata să economisești bani?</h2>
       <p>Compară ofertele de asigurări, energie și internet în 2 minute. Gratuit, fără apeluri telefonice, fără birocrație.</p>
-      <a href="#" class="btn-primary" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">🚀 Compară gratuit acum</a>
+      <a href="#" class="btn-primary" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8-.8-.7-2-.7-3 -.2z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Compară gratuit acum</a>
     </div>
   </div>
 </section>
@@ -461,38 +466,6 @@ function setLang(lang, btn) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
-// Custom cursor — desktop only
-if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouchstart' in window)){
-  var dot=document.getElementById('cursor-dot');
-  var ring=document.getElementById('cursor-ring');
-  if(dot&&ring){
-    var mouseX=0,mouseY=0,ringX=0,ringY=0,initialized=false;
-    function setPos(e){
-      mouseX=e.clientX;mouseY=e.clientY;
-      if(!initialized){ringX=mouseX;ringY=mouseY;initialized=true;}
-      dot.style.setProperty('--cx',mouseX+'px');
-      dot.style.setProperty('--cy',mouseY+'px');
-    }
-    document.addEventListener('mousemove',setPos);
-    document.addEventListener('mousedown',setPos);
-    document.addEventListener('pointermove',function(e){mouseX=e.clientX;mouseY=e.clientY;if(!initialized){ringX=mouseX;ringY=mouseY;initialized=true;}},{passive:true});
-    function animateRing(){
-      ringX+=(mouseX-ringX)*0.15;
-      ringY+=(mouseY-ringY)*0.15;
-      ring.style.setProperty('--cx',ringX+'px');
-      ring.style.setProperty('--cy',ringY+'px');
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-    var HOVER='a,button,[role="button"],[data-hover],.category-card,.widget-tab,.widget-subtab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit';
-    document.addEventListener('mouseover',function(e){
-      document.body.classList.toggle('hovering',!!e.target.closest(HOVER));
-    });
-    document.addEventListener('mouseout',function(e){
-      if(!e.relatedTarget||!e.relatedTarget.closest(HOVER)) document.body.classList.remove('hovering');
-    });
-  }
-}
 </script>
 <script>
 // Touch dropdown support v2 - works on any touch-capable device
@@ -520,11 +493,4 @@ if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouch
 </script>
 <script>
 function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'✕':'☰';b.setAttribute('aria-expanded',o);}
-document.addEventListener('click',function(e){var l=document.querySelector('.navbar-links'),t=document.querySelector('.navbar-toggle');if(l&&l.classList.contains('open')&&!e.target.closest('.navbar-links')&&!e.target.closest('.navbar-toggle')){l.classList.remove('open');if(t){t.innerHTML='☰';t.setAttribute('aria-expanded','false');}}});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/bruno-chat.js"></script>
-</body>
-</html>
+document.addEventListener('click',functi

@@ -106,7 +106,7 @@
       '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem;">';
     INSURERS.forEach(function(a){
       html+='<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;">'+
-        '<span style="font-weight:700;font-size:.9rem;">🛡️ '+a.name+'</span>'+
+        '<span style="font-weight:700;font-size:.9rem;"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> '+a.name+'</span>'+
         (a.url?('<a href="'+a.url+'" target="_blank" rel="noopener nofollow" style="font-size:.75rem;color:var(--accent);white-space:nowrap;">'+t.quote+'</a>'):'')+
         '</div>';
     });

@@ -41,7 +41,7 @@
       var euro=o.euro?(' <span style="font-size:.75rem;color:var(--text-muted);">('+(isEN&&o.euroEn?o.euroEn:o.euro)+')</span>'):'';
       var cond=o.cond?('<p style="font-size:.75rem;color:var(--text-muted);margin:.6rem 0 0;">'+(isEN?o.condEn:o.cond)+'</p>'):'';
       html+='<div class="result-card"><div class="result-card-top"><div>'+
-        '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;"><span style="font-size:1.5rem;">📡</span><div class="result-provider">'+o.provider+'</div>'+badge+'</div>'+
+        '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;"><span style="font-size:1.5rem;"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span><div class="result-provider">'+o.provider+'</div>'+badge+'</div>'+
         '<div style="font-size:.9rem;color:var(--text-primary);font-weight:600;">'+o.offer+'</div>'+
         '<div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">'+t.down+': '+(isEN&&o.downEn?o.downEn:o.down)+(o.up!=='—'?(' · '+t.up+': '+o.up):'')+'</div>'+
         '</div><div class="result-price">'+

@@ -4,12 +4,21 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Terms and Conditions | ComparaAcum.ro</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+<meta property="og:title" content="Terms and Conditions | ComparaAcum.ro"/>
+<meta property="og:description" content="Terms and conditions for using the ComparaAcum.ro comparison platform."/>
+<meta property="og:image" content="https://comparaacum.ro/images/og-image.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://comparaacum.ro/en/terms-en"/>
+<meta property="og:locale" content="en_GB"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="description" content="Terms and conditions for using the ComparaAcum.ro comparison platform."/>
 <link rel="canonical" href="https://comparaacum.ro/en/terms-en"/>
 <link rel="alternate" hreflang="ro" href="https://comparaacum.ro/termeni-conditii"/>
 <link rel="alternate" hreflang="en" href="https://comparaacum.ro/en/terms-en"/>
 <link rel="alternate" hreflang="x-default" href="https://comparaacum.ro/termeni-conditii"/>
-<link rel="stylesheet" href="../css/main.css?v=41"/>
+<link rel="stylesheet" href="../css/main.css?v=42"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <script src="../js/cookie-consent.js"></script>
 <link rel="manifest" href="/manifest.json"/>
@@ -26,8 +35,6 @@
 </style>
 </head>
 <body>
-<style>@media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none!important}}</style>
-<div id="cursor-dot"></div><div id="cursor-ring"></div>
 <nav class="navbar">
   <a href="index-en.html" class="navbar-logo">Compara<span>Acum</span>.ro</a>
   <div class="navbar-links">
@@ -103,39 +110,6 @@
   </div>
 </footer>
 <script>function toggleMenu(b){var l=document.querySelector('.navbar-links');if(!l)return;var o=l.classList.toggle('open');b.innerHTML=o?'✕':'☰';}</script>
-<script>
-if(window.matchMedia('(hover: hover) and (pointer: fine)').matches && !('ontouchstart' in window)){
-  var dot=document.getElementById('cursor-dot');
-  var ring=document.getElementById('cursor-ring');
-  if(dot&&ring){
-    var mouseX=0,mouseY=0,ringX=0,ringY=0,initialized=false;
-    function setPos(e){
-      mouseX=e.clientX;mouseY=e.clientY;
-      if(!initialized){ringX=mouseX;ringY=mouseY;initialized=true;}
-      dot.style.setProperty('--cx',mouseX+'px');
-      dot.style.setProperty('--cy',mouseY+'px');
-    }
-    document.addEventListener('mousemove',setPos);
-    document.addEventListener('mousedown',setPos);
-    document.addEventListener('pointermove',function(e){mouseX=e.clientX;mouseY=e.clientY;if(!initialized){ringX=mouseX;ringY=mouseY;initialized=true;}},{passive:true});
-    function animateRing(){
-      ringX+=(mouseX-ringX)*0.15;
-      ringY+=(mouseY-ringY)*0.15;
-      ring.style.setProperty('--cx',ringX+'px');
-      ring.style.setProperty('--cy',ringY+'px');
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-    var HOVER='a,button,[role="button"],[data-hover],.category-card,.widget-tab,.widget-subtab,.btn-primary,.btn-secondary,.btn-select,.lang-btn,.widget-submit,.auth-tab,.auth-submit,.auth-google,.btn-ghost';
-    document.addEventListener('mouseover',function(e){
-      document.body.classList.toggle('hovering',!!e.target.closest(HOVER));
-    });
-    document.addEventListener('mouseout',function(e){
-      if(!e.relatedTarget||!e.relatedTarget.closest(HOVER)) document.body.classList.remove('hovering');
-    });
-  }
-}
-</script>
 <script src="../js/bruno-chat.js"></script>
 </body>
 </html>

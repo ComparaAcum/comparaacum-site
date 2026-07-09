@@ -38,7 +38,7 @@
         ? '<div class="result-price-main" style="font-size:1rem;">'+t.quote+'</div>'
         : '<div class="result-price-main">'+(o.from?t.from:'')+o.price+' RON</div><div class="result-price-period">/ '+t.month+'</div>';
       html+='<div class="result-card"><div class="result-card-top"><div>'+
-        '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;"><span style="font-size:1.5rem;">📺</span><div class="result-provider">'+o.provider+'</div>'+badge+'</div>'+
+        '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;"><span style="font-size:1.5rem;"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg></span><div class="result-provider">'+o.provider+'</div>'+badge+'</div>'+
         '<div style="font-size:.9rem;color:var(--text-primary);font-weight:600;">'+o.offer+'</div>'+
         '<div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">'+t.tech+': '+(isEN?o.techEn:o.tech)+'</div>'+
         '</div><div class="result-price">'+priceHtml+'</div></div>'+

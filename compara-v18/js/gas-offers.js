@@ -18,7 +18,7 @@
     {provider:'Engie România', offer:'Oferte gaze Engie', price:CAP, capped:true,
      term:'12 luni', termEn:'12 months', url:'https://www.engie.ro/gaze-naturale/'},
     {provider:'Premier Energy', offer:'Ofertă gaze casnic', price:CAP, capped:true,
-     term:'12 luni', termEn:'12 months', url:'https://www.premierenergy.ro/'},
+     term:'12 luni', termEn:'12 months', url:'https://premierenergy.ro/'},
     {provider:'Electrica Furnizare', offer:'Gaz Stabil', price:CAP, capped:true,
      term:'nedeterminat', termEn:'open-ended', url:'https://www.electricafurnizare.ro/'}
   ];
@@ -79,7 +79,7 @@
       var badge=o.badge?('<span class="saving-badge">'+(isEN?o.badgeEn:o.badge)+'</span>'):'';
       var note=o.capped?t.capNote:(isEN?o.noteEn:o.note);
       html+='<div class="result-card"><div class="result-card-top"><div>'+
-        '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;"><span style="font-size:1.5rem;">🔥</span><div class="result-provider">'+o.provider+'</div>'+badge+'</div>'+
+        '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;"><span style="font-size:1.5rem;"><svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.2-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.5-2.3 1-3 0 1.4 1.1 2.5 2.5 2.5z"/></svg></span><div class="result-provider">'+o.provider+'</div>'+badge+'</div>'+
         '<div style="font-size:.9rem;color:var(--text-primary);font-weight:600;">'+o.offer+'</div>'+
         '<div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">'+t.term+': '+(isEN?o.termEn:o.term)+'</div>'+
         '</div><div class="result-price">'+priceHtml+'</div></div>'+

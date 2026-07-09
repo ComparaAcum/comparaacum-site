@@ -12,7 +12,7 @@
      term:'12 luni', termEn:'12 months', green:true, greenLabel:'Energie hidro', greenLabelEn:'Hydro energy',
      features:['Preț fix 12 luni','Producător de stat','Factură online'],
      featuresEn:['Fixed price 12 months','State-owned producer','Online billing'],
-     url:'https://www.hidroelectrica.ro/oferte-furnizare', badge:'Cel mai mic preț', badgeEn:'Lowest price'},
+     url:'https://client.hidroelectrica.ro/contractare', badge:'Cel mai mic preț', badgeEn:'Lowest price'},
     {provider:'Nova Power & Gas', offer:'Nova Preț fix 3 luni', price:1.17,
      term:'3 luni', termEn:'3 months',
      features:['Preț fix 3 luni','Contract scurt','Contractare online'],
@@ -60,7 +60,7 @@
      url:'https://www.electricafurnizare.ro/'}
   ];
 
-  var ICONS = {'Hidroelectrica':'💧','Nova Power & Gas':'⚡','PPC Energie':'🔌','E.ON Energie România':'🔋','Engie România':'🔥','Electrica Furnizare':'💡'};
+  var ICONS = {'Hidroelectrica':'<svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7l5.7 5.7a8 8 0 1 1-11.3 0z"/></svg>','Nova Power & Gas':'<svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>','PPC Energie':'<svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z"/><path d="M12 22v-5"/></svg>','E.ON Energie România':'<svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></svg>','Engie România':'<svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.2-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.5-2.3 1-3 0 1.4 1.1 2.5 2.5 2.5z"/></svg>','Electrica Furnizare':'<svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>'};
 
   function fmt(n){ return n.toFixed(2).replace('.', ','); }
 
@@ -100,7 +100,7 @@
         '<div class="result-card-top">'+
           '<div>'+
             '<div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem;flex-wrap:wrap;">'+
-              '<span style="font-size:1.5rem;">'+(ICONS[o.provider]||'⚡')+'</span>'+
+              '<span style="font-size:1.5rem;">'+(ICONS[o.provider]||'<svg class="ca-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>')+'</span>'+
               '<div class="result-provider">'+o.provider+'</div>'+badge+greenTag+
             '</div>'+
             '<div style="font-size:.9rem;color:var(--text-primary);font-weight:600;">'+o.offer+'</div>'+
