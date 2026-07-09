@@ -1,19 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://comparaacum.ro/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://comparaacum.ro/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://comparaacum.ro/?lang=en"/>
-  </url>
-  <url><loc>https://comparaacum.ro/rezultate.html</loc><lastmod>2026-05-01</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://comparaacum.ro/blog.html</loc><lastmod>2026-05-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://comparaacum.ro/blog/rca-2026.html</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://comparaacum.ro/blog/energie-2026.html</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://comparaacum.ro/blog/internet-2026.html</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://comparaacum.ro/despre.html</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://comparaacum.ro/contact.html</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-</urlset>
+# ComparaAcum.ro
+
+> Platformă independentă de comparare pentru România: asigurări RCA, asigurări locuință și sănătate, energie electrică, gaze naturale, internet și televiziune. Gratuit, imparțial, cu date din surse oficiale (ANRE/POSF, ASF) și prețuri de listă publicate de operatori.
+
+## Pagini principale
+
+- Compară acum: https://comparaacum.ro/
+- Energie electrică (oferte reale ANRE/POSF): https://comparaacum.ro/rezultate-energie
+- Gaze naturale (mecanism OUG 12/2026): https://comparaacum.ro/rezultate-gaze
+- RCA (tarif de referință oficial ASF): https://comparaacum.ro/rezultate
+- Internet fibră: https://comparaacum.ro/rezultate-internet
+- Televiziune: https://comparaacum.ro/rezultate-tv
+- Blog și ghiduri: https://comparaacum.ro/blog
+- Despre platformă: https://comparaacum.ro/despre
+- Contact și parteneriate: https://comparaacum.ro/contact
+
+## Limbi
+
+Principală: română (ro-RO)
+Secundară: engleză (en-GB) — https://comparaacum.ro/en/index-en
+
+## Model
+
+Comparator CPL/CPA — serviciu gratuit pentru utilizatori; contractarea se face direct la furnizor. Nu suntem broker sau intermediar de asigurări.

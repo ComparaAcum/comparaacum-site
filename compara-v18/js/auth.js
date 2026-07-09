@@ -132,10 +132,28 @@
     }
   }
 
+  // ── Deconectare automată după 30 de zile de inactivitate ────
+  var INACT_KEY = "ca_last_seen", INACT_MS = 30 * 24 * 60 * 60 * 1000;
+  function touchOrExpire(user) {
+    if (!user) { try { localStorage.removeItem(INACT_KEY); } catch (e) {} return user; }
+    try {
+      var last = parseInt(localStorage.getItem(INACT_KEY) || "0", 10);
+      if (last && (Date.now() - last) > INACT_MS) {
+        // sesiune veche: deconectăm fără redirect agresiv
+        var c = client();
+        if (c) c.auth.signOut();
+        localStorage.removeItem(INACT_KEY);
+        return null;
+      }
+      localStorage.setItem(INACT_KEY, String(Date.now()));
+    } catch (e) {}
+    return user;
+  }
+
   function refreshNav() {
     var c = client();
     if (!c) { injectNav(null); return; }
-    CA.getUser().then(injectNav).catch(function () { injectNav(null); });
+    CA.getUser().then(function (u) { injectNav(touchOrExpire(u)); }).catch(function () { injectNav(null); });
     c.auth.onAuthStateChange(function (_e, session) {
       injectNav(session ? session.user : null);
     });
