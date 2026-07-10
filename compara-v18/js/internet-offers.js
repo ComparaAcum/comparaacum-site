@@ -49,7 +49,7 @@
         '<div class="result-price-period">/ '+(isEN?'month':'lună')+euro+'</div>'+
         '</div></div>'+
         '<div class="result-features">'+feats+'</div>'+cond+
-        '<div class="result-actions"><a class="btn-select" href="'+o.url+'" target="_blank" rel="noopener nofollow">'+t.see+'</a></div>'+
+        '<div class="result-actions"><a class="btn-select" href="'+(o.id?('/api/go/'+o.id):o.url)+'" target="_blank" rel="noopener nofollow sponsored">'+t.see+'</a></div>'+
         '</div>';
     });
     html+='</div>';
@@ -57,6 +57,8 @@
   }
 
   window.CANet={render:render};
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',render);
-  else render();
+  function loadOffers(){try{fetch('/api/offers?cat=internet').then(function(r){return r.ok?r.json():Promise.reject();}).then(function(rows){if(Array.isArray(rows)&&rows.length){OFFERS=rows;render();}}).catch(function(){});}catch(e){}}
+  function boot(){render();loadOffers();}
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot);
+  else boot();
 })();

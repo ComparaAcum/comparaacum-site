@@ -43,7 +43,7 @@
         '<div style="margin-top:.5rem;font-size:.85rem;color:var(--text-secondary);">'+t.tech+': '+(isEN?o.techEn:o.tech)+'</div>'+
         '</div><div class="result-price">'+priceHtml+'</div></div>'+
         '<div class="result-features">'+feats+'</div>'+
-        '<div class="result-actions"><a class="btn-select" href="'+o.url+'" target="_blank" rel="noopener nofollow">'+t.see+'</a></div>'+
+        '<div class="result-actions"><a class="btn-select" href="'+(o.id?('/api/go/'+o.id):o.url)+'" target="_blank" rel="noopener nofollow sponsored">'+t.see+'</a></div>'+
         '</div>';
     });
     html+='</div>';
@@ -51,6 +51,8 @@
   }
 
   window.CATv={render:render};
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',render);
-  else render();
+  function loadOffers(){try{fetch('/api/offers?cat=tv').then(function(r){return r.ok?r.json():Promise.reject();}).then(function(rows){if(Array.isArray(rows)&&rows.length){OFFERS=rows;render();}}).catch(function(){});}catch(e){}}
+  function boot(){render();loadOffers();}
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot);
+  else boot();
 })();

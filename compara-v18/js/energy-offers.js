@@ -114,7 +114,7 @@
         '</div>'+
         '<div class="result-features">'+feats+'</div>'+
         '<div class="result-actions">'+
-          '<a class="btn-select" href="'+o.url+'" target="_blank" rel="noopener nofollow">'+t.see+'</a>'+
+          '<a class="btn-select" href="'+(o.id?('/api/go/'+o.id):o.url)+'" target="_blank" rel="noopener nofollow sponsored">'+t.see+'</a>'+
           (savingYr>0?('<span class="saving-badge">'+t.cheaper.replace('%s',savingYr.toLocaleString(isEN?'en-GB':'ro-RO'))+'</span>'):'')+
         '</div>'+
         (x.exact?'':'<p style="font-size:.72rem;color:var(--text-muted);margin-top:.5rem;">'+t.zoneNote+'</p>')+
@@ -148,7 +148,14 @@
       }
     }catch(e){}
   }
-  function boot(){applyUrl();render();}
+  function loadOffers(){
+    try{
+      fetch('/api/offers?cat=energie').then(function(r){return r.ok?r.json():Promise.reject();})
+        .then(function(rows){ if(Array.isArray(rows)&&rows.length){ OFFERS=rows; render(); } })
+        .catch(function(){});
+    }catch(e){}
+  }
+  function boot(){applyUrl();render();loadOffers();}
 
   window.CAEnergy = {render:render, DATA_DATE:DATA_DATE, DATA_DATE_EN:DATA_DATE_EN, count:OFFERS.length};
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot);
